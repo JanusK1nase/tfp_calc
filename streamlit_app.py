@@ -793,7 +793,7 @@ def sangobion():
     if give < 1:
         st.write("Please choose a different brand. Thank you!")
     elif give >= 1:
-        print = (f"Sangobion: \nGive {give} cap/s once a day for 14 days.\n ")
+        print = (f"Sangobion: \nGive {give:.0f} cap/s once a day for 14 days.\n ")
         st.write (print)
         return print
 
