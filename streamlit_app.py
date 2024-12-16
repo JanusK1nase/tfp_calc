@@ -1161,7 +1161,7 @@ def generate_pdf(results):
     pdf.set_font("Arial", size=11)
     
     # Add image as header
-    image_path = "JanusK1nase/tfp_calc/tfplogo.png"
+    image_path = "/mount/src/tfp_calc/tfplogo.png"
     pdf.image(image_path, x=10, y=8, w=180, h = 30)
     
     pdf.ln(30)  # Move to the next line
