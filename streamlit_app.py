@@ -8,7 +8,8 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import os
-st.write(os.getcwd())
+absolute_path = os.path.abspath("tfplogo.png")
+st.write(absolute_path)
 
 
 
