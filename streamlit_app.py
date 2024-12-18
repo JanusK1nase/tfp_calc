@@ -485,6 +485,26 @@ def main ():
         result = levothyroxine()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)  
+elif drug == "coforta" or drug == "ib" or drug == "immune booster":
+        result = coforta()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)  
+
+    elif drug == "tobra" or drug == "tobramycin":
+        result = tobra()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)  
+    
+    elif drug == "sodago" or drug == "tobrasodago":
+        result = tobrasodago()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+    elif drug == "cyclophosphamide" :
+        result = cyclophosphamide()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+    
 
     else:
         st.write ("Refer to Drug Codex")
@@ -512,6 +532,31 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def cyclophosphamide():
+    dsg = st.number_input("Please choose Cyclophosphamide dosage: 10 - 15 mg/m2")
+    cons = 20
+    give = (BSA * dsg / cons )
+    print = (f"Cyclophosphamide 20mg/ml: Give {give:.2f} ml orally once a day as maintenance. \n")
+    st.write (print)
+    return print
+
+def tobra():
+    print = ("Tobramycin Eye Drops: \nApply 2 drops on both/affected eyes twice a day for 14 days.\n ")
+    st.write (print)
+    return (print)
+
+def tobrasodago():
+    print = ("Tobramycin Eye Drops + Sodago (Stem Cells): \nApply 2 drops on both/affected eyes twice a day for 14 days.\n ")
+    st.write (print)
+    return (print)
+    
+
+def coforta():
+    give = (weight / 10)
+    print = (f"Coforta: {give:.2f}ml IV SID")
+    st. write (print)
+    return print
+    
 def levothyroxine():
     dsg = st.number_input("Please choose levothyroxine dosage: 0.01 - 0.02 mg/kg \nRecommended starting dosage: 0.02mg/kg")
     give =  int(round_half_up((weight * dsg / 0.6)*4)) / 4
