@@ -537,7 +537,7 @@ def cyclophosphamide():
     dsg = st.number_input("Please choose Cyclophosphamide dosage: 10 - 15 mg/m2")
     cons = 20
     give = (BSA * dsg / cons )
-    print = (f"Cyclophosphamide 20mg/ml: Give {give:.2f} ml orally once a day as maintenance. \n")
+    print = (f"Cyclophosphamide 20mg/ml: \nGive {give:.2f} ml orally once a day as maintenance. \n ")
     st.write (print)
     return print
 
