@@ -485,7 +485,8 @@ def main ():
         result = levothyroxine()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)  
-elif drug == "coforta" or drug == "ib" or drug == "immune booster":
+            
+    elif drug == "coforta" or drug == "ib" or drug == "immune booster":
         result = coforta()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)  
