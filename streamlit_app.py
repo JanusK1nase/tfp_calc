@@ -505,6 +505,17 @@ def main ():
         result = cyclophosphamide()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+     elif drug == "coatshine" :
+        result = coatshine()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+    elif drug == "activim" :
+        result = activim()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+    
     
 
     else:
@@ -533,6 +544,28 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def activim():
+    if weight <= 5:
+        x = 1
+    elif weight <=10:
+        x = 2
+    elif weight >10
+        x = 3
+    print = (f"Activim: \nGive {x} inch/es approx. once a day as supplement.\n ")
+    st.write (print)
+    return print
+    
+
+def coatshine():
+    if species == "dog" or species == "canine" or species == "can" or species == "c":
+        give = (weight / 5)
+    else:
+        give = (weight / 3)
+    print = (f"Coatshine: \nGive {give:.1f} ml once a day as supplement. \n ")
+    st.write (print)
+    return print
+    
+
 def cyclophosphamide():
     dsg = st.number_input("Please choose Cyclophosphamide dosage: 10 - 15 mg/m2")
     cons = 20
