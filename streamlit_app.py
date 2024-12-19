@@ -506,7 +506,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-     elif drug == "coatshine" :
+    elif drug == "coatshine" :
         result = coatshine()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
