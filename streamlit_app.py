@@ -549,7 +549,7 @@ def activim():
         x = 1
     elif weight <=10:
         x = 2
-    elif weight >10
+    elif weight >10:
         x = 3
     print = (f"Activim: \nGive {x} inch/es approx. once a day as supplement.\n ")
     st.write (print)
