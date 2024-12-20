@@ -1271,7 +1271,7 @@ def generate_pdf(results):
     pdf.image(image_path, x=10, y=8, w=180, h = 30)
 
     rx_path = "/mount/src/tfp_calc/rxsign.png"
-    pdf.image(rx_path, x= 10, y=75, w=30, h = 30)
+    pdf.image(rx_path, x= 10, y=70, w=30, h = 30)
 
     
     pdf.ln(30)  # Move to the next line
