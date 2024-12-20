@@ -1288,6 +1288,7 @@ def generate_pdf(results):
     
     for index, result in enumerate(results, start=1):
         pdf.multi_cell(200, 10, txt=f"({index}) {result}")
+        pdf.ln(5)
 
     
     pdf.output(f"{patientname} Rx.pdf")
