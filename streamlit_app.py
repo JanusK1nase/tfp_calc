@@ -564,7 +564,7 @@ def lutein():
     return print
 
 def cet():
-    dsg = st.number_input("Please choose Cetirizine dosage: 10 - 20 mg/kg")
+    dsg = st.number_input("Please choose Cetirizine dosage: 1 - 2 mg/kg")
     cons = 1
     give = (weight * dsg / cons )
     print = (f"Cetirizine 5mg/5ml: \nGive {give:.1f} ml orally once a day as maintenance. \n ")
