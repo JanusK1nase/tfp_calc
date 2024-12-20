@@ -1775,7 +1775,7 @@ def retromad():
 
 
 def gs():
-    gsdsg = st.number_input_input("Please choose GS dosage: \n6mg/kg (Wet and Dry FIP) \n10mg/kg (Neurological and Ocular)")
+    gsdsg = st.number_input("Please choose GS dosage: \n6mg/kg (Wet and Dry FIP) \n10mg/kg (Neurological and Ocular)")
     gscons = 20
     gsgive = (weight * gsdsg / gscons)
     gsprint = (f"GS: \nInject {gsgive:.1f} ml SQ once a day for 84 days.\n ")
