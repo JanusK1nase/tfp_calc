@@ -515,7 +515,16 @@ def main ():
         result = activim()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
-    
+            
+    elif drug == "cetirizine" :
+        result = cet()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+    elif drug == "lutein" or drug == "eye care" :
+        result = lutein()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
 
     else:
@@ -544,6 +553,24 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def lutein():
+    if weight <= 15:
+        print = ("Lutein Eye Care: \nMix 1 packet with food once a day as supplement. \n ")
+    elif weight <= 35:
+        print = ("Lutein Eye Care: \nMix 2 packets with food once a day as supplement. \n ")
+     elif weight > 35:
+        print = ("Lutein Eye Care: \nMix 3 packets with food once a day as supplement. \n ")
+    st.write (print)
+    return print
+
+def cet():
+    dsg = st.number_input("Please choose Cetirizine dosage: 10 - 20 mg/kg")
+    cons = 1
+    give = (weight * dsg / cons )
+    print = (f"Cetirizine 5mg/5ml: \nGive {give:.1f} ml orally once a day as maintenance. \n ")
+    st.write (print)
+    return print
+
 def activim():
     if weight <= 5:
         x = 1
