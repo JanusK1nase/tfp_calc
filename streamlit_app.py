@@ -1269,6 +1269,10 @@ def generate_pdf(results):
     # Add image as header
     image_path = "/mount/src/tfp_calc/tfplogo.png"
     pdf.image(image_path, x=10, y=8, w=180, h = 30)
+
+    rx_path = "/mount/src/tfp_calc/rxsign.png"
+    pdf.image(rx_path, x= 10, y=50, w=30, h = 30)
+
     
     pdf.ln(30)  # Move to the next line
     indent = 4  # Set the indentation level
@@ -1280,7 +1284,7 @@ def generate_pdf(results):
     pdf.cell(200, 10, txt=f"Weight: {weight} kg", ln=True, align='L')
 
     # Adjust the y-coordinate for the text to start below the image
-    pdf.set_y(75)
+    pdf.set_y(100)
     
     for index, result in enumerate(results, start=1):
         pdf.multi_cell(200, 10, txt=f"({index}) {result}")
