@@ -1287,7 +1287,7 @@ def generate_pdf(results):
     pdf.set_y(100)
     
     for index, result in enumerate(results, start=1):
-        pdf.multi_cell(200, 5, txt=f"({index}) {result}")
+        pdf.multi_cell(200, 8, txt=f"({index}) {result}")
         pdf.ln(0.05)
 
     
