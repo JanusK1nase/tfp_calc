@@ -811,11 +811,15 @@ def cbromhex():
 
 def oxytocin():
     if species == "dog" or species == "canine" or species == "can" or species == "c":
-     dsg = st.number_input("Oxy dosage: 0.5 - 2 IU / dose")
-     give = (dsg / 10)
-     print = (f"Oxytocin 10IU: {give:.2f}ml IM/SQ PRN")
-     st.write (print)
-     return print
+        dsg = st.number_input("Oxy dosage: 0.5 - 2 IU / dose")
+        give = (dsg / 10)
+        print = (f"Oxytocin 10IU: {give:.2f}ml IM/SQ PRN")
+    if species == "cat" or species == "feline" or species == "fel":
+        dsg = st.number_input("Oxy dosage: 0.25 - 1 IU / dose")
+        give = (dsg / 10)
+        print = (f"Oxytocin 10IU: {give:.2f}ml IM/SQ PRN")
+    st.write (print)
+    return print
 
 def atro():
         dsg = st.number_input("Dosage: 0.22 - 0.44 mg/kg")
