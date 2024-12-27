@@ -1877,8 +1877,91 @@ def coamox():
 def pred():
     preddsg = st.number_input("Please choose Prednisone dosage: 0.5 - 1 mg/kg: ")
     predcons = st.number_input("Please choose Prednisone concentration: \n\n2mg/ml (10mg/5ml LIQUID)\n\n 5mg (TABLET)\n\n10mg (TABLET)\n\nPlease input NUMBERS ONLY")
-    predgive = (weight * preddsg / predcons)
-    drugprintpred = (f"Prednisone 10mg/5ml: \nGive {predgive:.1f} ml twice a day for 5 days. Then give {((predgive) / 2):.1f} ml once a day for another 5 days. \n ") 
+    if predcons == 2:
+        predgive = (weight * preddsg / predcons)
+        drugprintpred = (f"Prednisone 10mg/5ml: \nGive {predgive:.1f} ml twice a day for 5 days. Then give {((predgive) / 2):.1f} ml once a day for another 5 days. \n ") 
+    elif predgive == 5
+        predgive = int(round_half_up((weight * doxykodsg / doxykocons)*4)) / 4
+        if predgive == 0.25:
+            tab = ("1/4")
+                            
+        elif predgive == 0.5:
+            tab = ("1/2")
+
+        elif predgive == 0.75:
+            tab = ("3/4")
+        
+        elif predgive == 1:
+            tab = ("1")
+
+        elif predgive == 1.25:
+            tab = ("1 and 1/4")
+
+        elif predgive == 1.5:
+            tab = ("1 and 1/2")
+
+        elif predgive == 1.75:
+            tab = ("1 and 3/4")
+        
+        elif predgive == 1.75:
+            tab = ("1 and 3/4")
+        
+        elif predgive == 2:
+            tab = ("2")
+        
+        elif predgive == 2.25:
+            tab = ("2 and 1/4")
+        
+        elif predgive == 2.5:
+            tab = ("2 and 1/2")
+        
+        elif predgive == 2.75:
+            tab = ("2 and 3/4")
+
+        elif predgive == 3:
+            tab = ("3")
+        drugprintpred = (f"Prednisone 5mg: \nGive {tab} ml twice a day for 5 days. Then give {tab} ml once a day for another 5 days. \n ") 
+    elif predgive == 10
+        predgive = int(round_half_up((weight * doxykodsg / doxykocons)*4)) / 4
+        if predgive == 0.25:
+            tab = ("1/4")
+                            
+        elif predgive == 0.5:
+            tab = ("1/2")
+
+        elif predgive == 0.75:
+            tab = ("3/4")
+        
+        elif predgive == 1:
+            tab = ("1")
+
+        elif predgive == 1.25:
+            tab = ("1 and 1/4")
+
+        elif predgive == 1.5:
+            tab = ("1 and 1/2")
+
+        elif predgive == 1.75:
+            tab = ("1 and 3/4")
+        
+        elif predgive == 1.75:
+            tab = ("1 and 3/4")
+        
+        elif predgive == 2:
+            tab = ("2")
+        
+        elif predgive == 2.25:
+            tab = ("2 and 1/4")
+        
+        elif predgive == 2.5:
+            tab = ("2 and 1/2")
+        
+        elif predgive == 2.75:
+            tab = ("2 and 3/4")
+
+        elif predgive == 3:
+            tab = ("3")
+        drugprintpred = (f"Prednisone 10mg: \nGive {tab} ml twice a day for 5 days. Then give {tab} ml once a day for another 5 days. \n ")
     st.write (drugprintpred)
     return drugprintpred
     
@@ -1887,10 +1970,12 @@ def prednisolone():
     prednisolonedsg = st.number_input("Please choose Prednisone dosage: 0.5 - 1 mg/kg: ")
     prednisolonecons = 3
     prednisolonegive = (weight * prednisolonedsg / prednisolonecons)
-    st.write (f"Prednisolone 15mg/5ml: \nGive {prednisolonegive:.1f} ml twice a day for 5 days. \nThen give {((prednisolonegive) / 2):.1f} ml for another 5 days.\n ")
-    prednisoloneprint = (f"Prednisolone 15mg/5ml: \nGive {prednisolonegive:.1f} ml twice a day for 5 days. \nThen give {((prednisolonegive) / 2):.1f} ml for another 5 days.\n ")
+    st.write (f"Prednisolone 15mg/5ml: \nGive {prednisolonegive:.1f} ml twice a day for 5 days. \nThen give {((prednisolonegive) / 2):.1f} ml once a day for another 5 days.\n ")
+    prednisoloneprint = (f"Prednisolone 15mg/5ml: \nGive {prednisolonegive:.1f} ml twice a day for 5 days. \nThen give {((prednisolonegive) / 2):.1f} ml once a day for another 5 days.\n ")
     return prednisoloneprint
 
+
+    
 #doxy stuff
 def doxy():
     doxydsg = st.number_input("Please choose Doxycycline dosage: 5mg/kg(BID) or 10mg/kg(SID)")
