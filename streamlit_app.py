@@ -1876,7 +1876,7 @@ def coamox():
 #pred stuff
 def pred():
     preddsg = st.number_input("Please choose Prednisone dosage: 0.5 - 1 mg/kg: ")
-    predcons = st.number_input("Please choose Prednisone concentration: \n2mg/ml (10mg/5ml LIQUID)\n 5mg (TABLET)\n10mg (TABLET)\nPlease input NUMBERS ONLY")
+    predcons = st.number_input("Please choose Prednisone concentration: \n\n2mg/ml (10mg/5ml LIQUID)\n\n 5mg (TABLET)\n\n10mg (TABLET)\n\nPlease input NUMBERS ONLY")
     predgive = (weight * preddsg / predcons)
     drugprintpred = (f"Prednisone 10mg/5ml: \nGive {predgive:.1f} ml twice a day for 5 days. Then give {((predgive) / 2):.1f} ml once a day for another 5 days. \n ") 
     st.write (drugprintpred)
