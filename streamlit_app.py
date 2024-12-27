@@ -525,6 +525,11 @@ def main ():
         result = lutein()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug == "metro" or drug == "metronidazole" :
+        result = metro()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
 
     else:
@@ -1385,9 +1390,17 @@ def vincristine():
     st.write (print)
     return print
 
+def metro():
+    dsg = st.number_input("Please choose Metronidazole dosage: 10 - 25 mg/kg")
+    cons = 25
+    give = (weight * dsg / cons)
+    print = (f"Metronidazole 25mg/ml: \nGive {give:.1f} ml twice a day for 14 days.\n ")
+    st.write(print)
+    return print
+
 def cotrimet():
     if species == "dog" or species == "canine":
-        cotrimetdsg = st.number_input("Please choose dosage: 30 - 45mg/kg")
+        cotrimetdsg = st.number_input("Please choose COtrimoxazole dosage: 30 - 45mg/kg")
     else:
         cotrimetdsg = 15
     cotrimetcons = 20
@@ -1863,7 +1876,7 @@ def coamox():
 #pred stuff
 def pred():
     preddsg = st.number_input("Please choose Prednisone dosage: 0.5 - 1 mg/kg: ")
-    predcons = 2
+    predcons = st.number_input("Please choose Prednisone concentration: \n2mg/ml (10mg/5ml LIQUID)\n 5mg (TABLET)\n10mg (TABLET)\nPlease input NUMBERS ONLY")
     predgive = (weight * preddsg / predcons)
     drugprintpred = (f"Prednisone 10mg/5ml: \nGive {predgive:.1f} ml twice a day for 5 days. Then give {((predgive) / 2):.1f} ml once a day for another 5 days. \n ") 
     st.write (drugprintpred)
