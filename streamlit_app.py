@@ -531,6 +531,11 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
     
+    elif drug == "doxo" or drug == "doxorubicin":
+        result = doxo()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
 
     else:
         st.write ("Refer to Drug Codex")
@@ -1386,7 +1391,16 @@ def vincristine():
     dsg = st.number_input("Please choose Vincristine dosage: 0.5 -  0.75 mg/m2")
     cons = 1
     give = (BSA * dsg / cons)
-    print = (f"Vincristine 1mg: {give:.1f} ml IV once a week or according to chemo protocol.")
+    print = (f"Vincristine 1mg: {give:.2f} ml IV once a week or according to chemo protocol.")
+    st.write (print)
+    return print
+
+def doxo():
+    if weight >= 15:
+        give = (BSA * 30 / 2)
+    elif weight < 15:
+        give = (weight * 1 / 2)
+    print = (f"Doxorubicin  2mg/ml: {give:.2f} ml IV every three weeks or according to chemo protocol.")
     st.write (print)
     return print
 
