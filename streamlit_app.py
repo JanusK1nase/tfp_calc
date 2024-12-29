@@ -1400,7 +1400,7 @@ def doxo():
         give = (BSA * 30 / 2)
     elif weight < 15:
         give = (weight * 1 / 2)
-    print = (f"Doxorubicin  2mg/ml: {give:.2f} ml IV every three weeks or according to chemo protocol.")
+    print = (f"Doxorubicin  2mg/ml: Mix {give:.2f} ml with 25 - 100ml of NSS.\nThen infuse IV for 15 - 20 mins. \nGive every three weeks or according to chemo protocol.")
     st.write (print)
     return print
 
