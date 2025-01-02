@@ -848,13 +848,16 @@ def profo():
         dsg = st.number_input("Please choose Profopol dosage: 2 - 6 mg/kg")
         give = (weight * dsg / 10)
         print (f"Profopol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
+        st.write (print)
+        return print
 
-    if species == "cat" or species == "feline" or species == "fel":
+    elif species == "cat" or species == "feline" or species == "fel":
         dsg = st.number_input("Please choose Profopol dosage: 4 - 8 mg/kg")
         give = (weight * dsg / 10)
         print (f"Profopol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
-    st.write (print)
-    return print
+        st.write (print)
+        return print
+    
     
 
 def cleve():
