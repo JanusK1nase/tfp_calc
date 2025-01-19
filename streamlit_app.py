@@ -567,7 +567,7 @@ def main ():
 def comep():
     dsg = st.number_input("Please choose Omeprazole dosage: 0.5 - 1 mg/kg")
     give = (dsg * weight / 40)
-    print = (f"Omeprazole: {dsg:.2f} IV SID")
+    print = (f"Omeprazole: {dsg:.2f} ml IV SID")
     st.write (print)
     return print
 
