@@ -486,6 +486,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)  
             
+        
     elif drug == "coforta" or drug == "ib" or drug == "immune booster":
         result = coforta()
         if st.button("Save to Rx"):
@@ -563,6 +564,13 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def comep():
+    dsg = st.number_input("Please choose Omeprazole dosage: 0.5 - 1 mg/kg")
+    give = (dsg * weight / 40)
+    print = (f"Omeprazole: {dsg:.2f} IV SID")
+    st.write (print)
+    return print
+
 def lutein():
     if weight <= 15:
         print = ("Lutein Eye Care: \nMix 1 packet with food once a day as supplement. \n ")
