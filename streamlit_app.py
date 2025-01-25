@@ -572,7 +572,7 @@ def main ():
 def lactulose():
     dsg = st.number_input("Please choose Lactulose dosage: 0.25 - \0.5 ml/kg")
     give = (dsg * weight)
-    print = (f"Lactulose 3.35g/5ml: \nGive {dsg:.1f} ml orally every 3 - 4 hours. \n ")
+    print = (f"Lactulose 3.35g/5ml: \nGive {give:.1f} ml orally every 3 - 4 hours. \n ")
     st.write (print)
     return print
 
