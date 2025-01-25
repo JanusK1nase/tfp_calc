@@ -1565,8 +1565,43 @@ def furo():
 def urso():
     ursodsg = st.number_input("Please choose Ursodiol dosage: 13 - 15mg/kg")
     ursocons = 300
-    ursogive = int(round_half_up((weight * ursodsg / ursocons)*4)) / 4
-    ursoprint = (f"Ursodiol 300mg: \nGive {ursogive} tab/s once to twice a day for 14 days.\n ")
+    give = int(round_half_up((weight * ursodsg / ursocons)*4)) / 4
+    if give == 0.25:
+        tab = ("1/4")
+
+    elif give == 0.5:
+        tab = ("1/2")
+
+    elif give == 0.75:
+        tab = ("3/4")
+    
+    elif give == 1:
+        tab = ("1")
+
+    elif give == 1.25:
+        tab = ("1 and 1/4")
+
+    elif give == 1.5:
+        tab = ("1 and 1/2")
+
+    elif give == 1.75:
+        tab = ("1 and 3/4")
+    
+    elif give == 2:
+        tab = ("2")
+    
+    elif give == 2.25:
+        tab = ("2 and 1/4")
+    
+    elif give == 2.5:
+        tab = ("2 and 1/2")
+
+    elif give == 2.75:
+        tab = ("2 and 3/4")
+
+    elif give == 3:
+        tab = ("3")
+    ursoprint = (f"Ursodiol 300mg: \nGive {tab} tab/s once to twice a day for 14 days.\n ")
     st.write (ursoprint)
     return ursoprint
 
@@ -2088,9 +2123,44 @@ def clinda():
 def marbo():
     marbodsg = st.number_input("Please choose Marbofloxacin dosage: 2.75 - 5.5 mg/kg: ")
     marbocons = st.number_input("Please choose concentration available of your choice: \n25mg or 50mg")
-    marbogive = int(round_half_up((weight * marbodsg / marbocons)*4)) / 4
-    st.write (f"Marbofloxcacin {marbocons:.0f}mg: \nGive {marbogive} tab/s once a day for 7 - 14 days.\n ")
-    marboprint = (f"Marbofloxcacin {marbocons:.0f}mg: \nGive {marbogive} tab/s once a day for 7 - 14 days.\n ")
+    give = int(round_half_up((weight * marbodsg / marbocons)*4)) / 4
+    if give == 0.25:
+        tab = ("1/4")
+
+    elif give == 0.5:
+        tab = ("1/2")
+
+    elif give == 0.75:
+        tab = ("3/4")
+    
+    elif give == 1:
+        tab = ("1")
+
+    elif give == 1.25:
+        tab = ("1 and 1/4")
+
+    elif give == 1.5:
+        tab = ("1 and 1/2")
+
+    elif give == 1.75:
+        tab = ("1 and 3/4")
+    
+    elif give == 2:
+        tab = ("2")
+    
+    elif give == 2.25:
+        tab = ("2 and 1/4")
+    
+    elif give == 2.5:
+        tab = ("2 and 1/2")
+
+    elif give == 2.75:
+        tab = ("2 and 3/4")
+
+    elif give == 3:
+        tab = ("3")
+    st.write (f"Marbofloxcacin {marbocons:.0f}mg: \nGive {tab} tab/s once a day for 7 - 14 days.\n ")
+    marboprint = (f"Marbofloxcacin {marbocons:.0f}mg: \nGive {tab} tab/s once a day for 7 - 14 days.\n ")
     return marboprint
 
 #maropitant stuff
