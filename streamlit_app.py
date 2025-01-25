@@ -537,6 +537,11 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+     elif drug == "lactulose" :
+        result = lactulose()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
 
     else:
         st.write ("Refer to Drug Codex")
@@ -564,6 +569,13 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def lactulose():
+    dsg = st.number_input("Please choose Lactulose dosage: 0.25 - \0.5 ml/kg")
+    give = (dsg * weight)
+    print = (f"Lactulose 3.35g/5ml: \nGive {dsg:.1f} ml orally every 3 - 4 hours. \n ")
+    st.write (print)
+    return print
+
 def comep():
     dsg = st.number_input("Please choose Omeprazole dosage: 0.5 - 1 mg/kg")
     give = (dsg * weight / 40)
