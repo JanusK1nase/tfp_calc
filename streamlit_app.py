@@ -537,7 +537,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-     elif drug == "lactulose" :
+     elif drug == "lactulose":
         result = lactulose()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
