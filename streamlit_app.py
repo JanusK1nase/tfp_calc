@@ -15,7 +15,7 @@ st.write(absolute_path)
 
 smtp_server = "smtp-mail.outlook.com"
 smtp_port = 587
-sender_email = "tfpcalcrx@outlook.com"drug == "blood transfusion"
+sender_email = "tfpcalcrx@outlook.com"
 sender_password = "Iltfp123"
 
 msg = MIMEMultipart()
