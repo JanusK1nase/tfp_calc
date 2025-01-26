@@ -542,7 +542,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug == "bt" or drug == "blood transfusion" drug == "blood trans":
+    elif drug == "bt" or drug == "blood transfusion" or drug == "blood trans":
         result = bt()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
