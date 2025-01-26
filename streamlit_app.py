@@ -15,7 +15,7 @@ st.write(absolute_path)
 
 smtp_server = "smtp-mail.outlook.com"
 smtp_port = 587
-sender_email = "tfpcalcrx@outlook.com"
+sender_email = "tfpcalcrx@outlook.com"drug == "blood transfusion"
 sender_password = "Iltfp123"
 
 msg = MIMEMultipart()
@@ -577,7 +577,7 @@ def main ():
 def bt():
     patient_pcv = st.number_input("Please indicate patient PCV or HCT:")
     target_pcv = st.number_input("Please indicate target PCV or HCT:")
-    give = (weight * 90) * (target_pcv - patient_pcv / 40)
+    give = (target_pcv - patient_pcv / 40) * (weight * 90) 
     print = (f"BT: Patient needs {give} ml of blood. \n ")
     st.write (print)
     return print
