@@ -542,6 +542,11 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+    elif drug == "bt" or drug == "blood transfusion" drug == "blood trans":
+        result = bt()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
 
     else:
         st.write ("Refer to Drug Codex")
@@ -569,6 +574,14 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def bt():
+    patient_pcv = st.number_input("Please indicate patient PCV or HCT:")
+    target_pcv = st.number_input("Please indicate target PCV or HCT:")
+    give = weight * 90 * (target_pcv - patient_pcv / 40)
+    print = (f"BT: Patient needs {give} ml of blood. \n ")
+    st.write (print)
+    return print
+
 def lactulose():
     dsg = st.number_input("Please choose Lactulose dosage: 0.25 - \0.5 ml/kg")
     give = (dsg * weight)
