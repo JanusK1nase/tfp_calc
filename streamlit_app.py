@@ -577,7 +577,7 @@ def main ():
 def bt():
     patient_pcv = st.number_input("Please indicate patient PCV or HCT:")
     target_pcv = st.number_input("Please indicate target PCV or HCT:")
-    give = weight * 90 * (target_pcv - patient_pcv / 40)
+    give = weight * 0.9 * (target_pcv - patient_pcv / 40)
     print = (f"BT: Patient needs {give} ml of blood. \n ")
     st.write (print)
     return print
