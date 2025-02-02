@@ -547,7 +547,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug == "hypromellose":
+    elif drug == "hypromellose" or drug == "hypro":
         result = hypromellose()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
