@@ -1270,7 +1270,7 @@ def renaln():
         give = ("Renal N: Mix 1 small scoop with every meal as maintenance.\n ")
     elif weight < 10:
         dsg = (weight / 2.5)
-        give = (f"Renal N: Mix {dsg} small scoop/s with every meal as maintenance.\n ")
+        give = (f"Renal N: Mix {dsg:.0f} small scoop/s with every meal as maintenance.\n ")
     elif weight >= 10:
         dsg = (weight / 10)
         give = (f"Renal N: Mix {dsg:.0f} big scoop/s with every meal as maintenance.\n ")
