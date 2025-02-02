@@ -547,7 +547,12 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+    elif drug == "hypromellose":
+        result = hypromellose()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
 
+    
     else:
         st.write ("Refer to Drug Codex")
 
@@ -579,6 +584,11 @@ def bt():
     target_pcv = st.number_input("Please indicate target PCV or HCT:")
     give = ((target_pcv - patient_pcv) / 40) * (weight * 90) 
     print = (f"BT: Patient needs {give} ml of blood. \n ")
+    st.write (print)
+    return print
+    
+def hypromellose():
+    print = ("Hypromellose: \nApply 2 drops on affected eye/s 2 - 3 times a day for 14 days. May be continued as needed. \n ")
     st.write (print)
     return print
 
