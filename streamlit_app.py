@@ -592,8 +592,8 @@ def main ():
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
 def pc():
-    dsg = st.number_input("Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Calcium oxalate dissolution. /n ")
-    give =  int(round_half_up((weight * dsg / 0.6)*4)) / 4
+    dsg = st.number_input(f"Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Calcium oxalate dissolution. \n ")
+    give =  int(round_half_up((weight * dsg / 1080)*4)) / 4
     if give == 0.25:
         tab = ("1/4")
 
