@@ -968,7 +968,7 @@ def soluneb():
 
 def thrombeat():
     give = (weight * 10 / 25)
-    print = (f"Tromb Beat: \nGive {give:.1f}ml once a day for 14 days.\n ")
+    print = (f"Thromb Beat: \nGive {give:.1f}ml once a day for 14 days.\n ")
     st.write (print)
     return print 
 
