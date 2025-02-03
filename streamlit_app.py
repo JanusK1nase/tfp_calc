@@ -626,7 +626,7 @@ def pc():
 
     elif give == 2.75:
         tab = ("2 and 3/4")
-    print = (f"Potassium citrate 1080mg: \nGive {tab} tab/s twice a day for 30 days.\n ")
+    print = (f"Potassium citrate 1080mg: \nGive {tab} tab/s once a day for 30 days.\n ")
     st.write (print)
     return print
 
