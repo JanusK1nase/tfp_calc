@@ -552,6 +552,12 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+    elif drug == "confis ultra" or drug == "confis":
+        result = confis()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+
     
     else:
         st.write ("Refer to Drug Codex")
@@ -579,6 +585,18 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def confis():
+    if weight <= 5:
+        x == "1/2"
+    elif weight <=10:
+        x = 1
+    elif weight <=20:
+        x = 2
+    print = (f"Confis ultra: \nGive {x} inch/es approx. once a day as supplement.\n ")
+    st.write (print)
+    return print
+    
+
 def bt():
     patient_pcv = st.number_input("Please indicate patient PCV or HCT:")
     target_pcv = st.number_input("Please indicate target PCV or HCT:")
