@@ -557,6 +557,12 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+    elif drug == "potassium citrate":
+        result = pc()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+    
 
     
     else:
@@ -585,6 +591,45 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def pc():
+    dsg = st.number_input("Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Calcium oxalate dissolution. /n ")
+    give =  int(round_half_up((weight * dsg / 0.6)*4)) / 4
+    if give == 0.25:
+        tab = ("1/4")
+
+    elif give == 0.5:
+        tab = ("1/2")
+
+    elif give == 0.75:
+        tab = ("3/4")
+
+    elif give == 1.25:
+        tab = ("1 and 1/4")
+    
+    elif give == 1:
+        tab = ("1")
+
+    elif give == 1.5:
+        tab = ("1 and 1/2")
+
+    elif give == 1.75:
+        tab = ("1 and 3/4")
+
+    elif give == 2.25:
+        tab = ("2 and 1/4")
+    
+    elif give == 2:
+        tab = ("2")
+
+    elif give == 2.5:
+        tab = ("2 and 1/2")
+
+    elif give == 2.75:
+        tab = ("2 and 3/4")
+    print = (f"Potassium citrate 1080mg: \nGive {tab} tab/s twice a day for 30 days.\n ")
+    st.write (print)
+    return print
+
 def confis():
     if weight <= 5:
         x == "1/2"
