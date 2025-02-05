@@ -601,8 +601,8 @@ def lidocaine():
         fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
         crigive = (0.12 / fluidrate * 1000 / 20)
         print = (f"Lidocaine 20mg/ml: \nGive {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.1f} ml from fluid bottle then add {crigive:.1f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
-        st.write print
-        return (print)
+        st.write (print)
+        return print
 
     
 
