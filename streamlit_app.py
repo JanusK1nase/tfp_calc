@@ -562,6 +562,10 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+    elif drug == "lidocaine" or drug == "lidocaine cri"
+        result = lidocaine()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
 
     
@@ -591,6 +595,20 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def lidocaine():
+    if species == "dog" or species == "canine" or species == "can" or species == "c":
+        firstgive = (weight / 20)
+        fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
+        crigive = (0.12 / fluidrate * 1000 / 20)
+        print = (f"Lidocaine 20mg/ml: \nGive {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.1f} ml from fluid bottle then add {crigive:.1f} ml of Lidocaine.
+        \nFluid Rate: Adjust fluid rate to: {fluidrate} ml/hr")
+        st.write print
+        return (print)
+
+    
+
+     crigive = (dsg_per_hr / fluidrate * bottle_volume / drugcons)
+
 def pc():
     dsg = st.number_input(f"Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Calcium oxalate dissolution. \n ")
     give =  int(round_half_up((weight * dsg / 1080)*4)) / 4
