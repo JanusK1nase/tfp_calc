@@ -562,7 +562,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug == "lidocaine" or drug == "lidocaine cri"
+    elif drug == "lidocaine" or drug == "lidocaine cri":
         result = lidocaine()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
