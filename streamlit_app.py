@@ -600,14 +600,17 @@ def lidocaine():
         firstgive = (weight / 20)
         fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
         crigive = (0.12 / fluidrate * 1000 / 20)
-        print = (f"Lidocaine 20mg/ml: \nGive {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.1f} ml from fluid bottle then add {crigive:.1f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
+        print = (f"Lidocaine 20mg/ml CRI: \nGive {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.1f} ml from fluid bottle then add {crigive:.1f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
+        st.write (print)
+        return print
+    else:
+        fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
+        crigive = (0.09 / fluidrate * 1000 / 20)
+        print = (f"Lidocaine 20mg/ml CRI: nRemove {crigive:.1f} ml from fluid bottle then add {crigive:.1f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
         st.write (print)
         return print
 
     
-
-     crigive = (dsg_per_hr / fluidrate * bottle_volume / drugcons)
-
 def pc():
     dsg = st.number_input(f"Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Calcium oxalate dissolution. \n ")
     give =  int(round_half_up((weight * dsg / 1080)*4)) / 4
