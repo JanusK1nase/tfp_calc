@@ -1262,7 +1262,7 @@ def leve():
     else:
         cons = 100
         give = (weight * dsg /cons)
-        print = (f"Levetiracetam 100ml/ml: \nGive {give}ml every 8 hours as maintenance.\n ")
+        print = (f"Levetiracetam 100ml/ml: \nGive {give:.1f}ml every 8 hours as maintenance.\n ")
     st.write(print)
     return print
 
