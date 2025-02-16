@@ -657,6 +657,8 @@ def confis():
         x = 1
     elif weight <=20:
         x = 2
+    elif weight <=35:
+        x = 3
     print = (f"Confis ultra: \nGive {x} tab/s once a day as maintenance/supplement.\n ")
     st.write (print)
     return print
