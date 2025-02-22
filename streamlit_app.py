@@ -567,7 +567,12 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
     
+    elif drug == "galibor":
+        result = galibor()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
 
+        
     
     else:
         st.write ("Refer to Drug Codex")
@@ -1681,6 +1686,15 @@ def furo():
     furoprint = (f"Furosemide {furocons}mg: \nGive {tab} tab/s twice to thrice a day for 7-14 days.\n ")
     st.write (furoprint)
     return furoprint
+
+def galibor():
+    ursodsg = st.number_input("Please choose Ursodiol dosage: 10 - 15mg/kg")
+    ursocons = 25
+    ursogive = (weight * ursodsg / ursocons)
+    ursoprint = (f"Ursodeoxycholic Acid 125mg/5ml: \nGive {ursogive} ml once a day for 15 - 30 days.\n ")
+    st.write (ursoprint)
+    return ursoprint
+
 
 def urso():
     ursodsg = st.number_input("Please choose Ursodiol dosage: 13 - 15mg/kg")
