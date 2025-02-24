@@ -657,7 +657,10 @@ def pc():
 
 def confis():
     if weight <= 5:
-        x == "1/2"
+        print = (f"Confis ultra: \nGive 1/2 tab/s once a day as maintenance/supplement.\n ")
+        st.write (print)
+        return print
+    return print
     elif weight <=10:
         x = 1
     elif weight <=20:
