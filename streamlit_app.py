@@ -9,7 +9,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import os
 absolute_path = os.path.abspath("tfplogo.png")
-st.write(absolute_path)
+
 
 
 
@@ -572,6 +572,13 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+    elif drug == "potassium citrate":
+        result = galibor()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+    
+
         
     
     else:
@@ -617,41 +624,47 @@ def lidocaine():
 
     
 def pc():
-    dsg = st.number_input(f"Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Calcium oxalate dissolution. \n ")
-    give =  int(round_half_up((weight * dsg / 1080)*4)) / 4
-    if give == 0.25:
-        tab = ("1/4")
-
-    elif give == 0.5:
-        tab = ("1/2")
-
-    elif give == 0.75:
-        tab = ("3/4")
-
-    elif give == 1.25:
-        tab = ("1 and 1/4")
+    dsg = st.number_input(f"Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Urine alkalinization. \n ")
+    checker = dsg * weight
+    if checker >= 250:
+        give =  int(round_half_up((weight * dsg / 1080)*4)) / 4
+        if give == 0.25:
+            tab = ("1/4")
     
-    elif give == 1:
-        tab = ("1")
-
-    elif give == 1.5:
-        tab = ("1 and 1/2")
-
-    elif give == 1.75:
-        tab = ("1 and 3/4")
-
-    elif give == 2.25:
-        tab = ("2 and 1/4")
+        elif give == 0.5:
+            tab = ("1/2")
     
-    elif give == 2:
-        tab = ("2")
-
-    elif give == 2.5:
-        tab = ("2 and 1/2")
-
-    elif give == 2.75:
-        tab = ("2 and 3/4")
-    print = (f"Potassium citrate 1080mg: \nGive {tab} tab/s once a day for 30 days.\n ")
+        elif give == 0.75:
+            tab = ("3/4")
+    
+        elif give == 1.25:
+            tab = ("1 and 1/4")
+        
+        elif give == 1:
+            tab = ("1")
+    
+        elif give == 1.5:
+            tab = ("1 and 1/2")
+    
+        elif give == 1.75:
+            tab = ("1 and 3/4")
+    
+        elif give == 2.25:
+            tab = ("2 and 1/4")
+        
+        elif give == 2:
+            tab = ("2")
+    
+        elif give == 2.5:
+            tab = ("2 and 1/2")
+    
+        elif give == 2.75:
+            tab = ("2 and 3/4")
+        print = (f"Potassium citrate 1080mg: \nGive {tab} tab/s once a day for 30 days.\n ")
+    else:
+        compound = round(weight * dsg * 5) / 5
+        tab_number = math.ceil(compound * 15 / 1080)
+        print = (f"Potassium citrate 1080mg #{tab_number}: \nPlease compound into papertabs each with {compound} mg. Thank you!\nSig. Give 1 papertab (powder only) once a day for 15 days.")
     st.write (print)
     return print
 
