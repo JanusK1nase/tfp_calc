@@ -659,6 +659,7 @@ def pc():
         
     else:
         compound = round(weight * dsg * 5) / 5
+        compound = int(compound)
         tab_number = int(math.ceil(compound * 15 / 1080))
         print = (f"Potassium citrate 1080mg #{tab_number}: \nPlease compound into papertabs each with {compound}mg. Thank you!\nSig. Give 1 papertab (powder only) once a day for 15 days.")
     st.write (print)
