@@ -572,11 +572,6 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug == "potassium citrate":
-        result = galibor()
-        if st.button("Save to Rx"):
-            st.session_state.results.append(result)
-
     
 
         
@@ -661,6 +656,7 @@ def pc():
         elif give == 2.75:
             tab = ("2 and 3/4")
         print = (f"Potassium citrate 1080mg: \nGive {tab} tab/s once a day for 30 days.\n ")
+        
     else:
         compound = round(weight * dsg * 5) / 5
         tab_number = math.ceil(compound * 15 / 1080)
