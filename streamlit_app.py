@@ -619,7 +619,7 @@ def lidocaine():
 
     
 def pc():
-    dsg = st.number_input(f"Please choose Potassium citrate dosage: 25 - 50 mg/kg \nFor Urine alkalinization. \n ")
+    dsg = st.number_input(f"Please choose Potassium citrate dosage: 25 - 50 mg/kg \n\nFor Urine alkalinization. \n ")
     checker = dsg * weight
     if checker >= 250:
         give =  int(round_half_up((weight * dsg / 1080)*4)) / 4
@@ -659,8 +659,8 @@ def pc():
         
     else:
         compound = round(weight * dsg * 5) / 5
-        tab_number = math.ceil(compound * 15 / 1080)
-        print = (f"Potassium citrate 1080mg #{tab_number}: \nPlease compound into papertabs each with {compound} mg. Thank you!\nSig. Give 1 papertab (powder only) once a day for 15 days.")
+        tab_number = int(math.ceil(compound * 15 / 1080))
+        print = (f"Potassium citrate 1080mg #{tab_number}: \nPlease compound into papertabs each with {compound}mg. Thank you!\nSig. Give 1 papertab (powder only) once a day for 15 days.")
     st.write (print)
     return print
 
