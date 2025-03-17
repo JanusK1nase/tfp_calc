@@ -616,11 +616,11 @@ def tramadol():
     if give < 0.8:
         st.write ("Please choose a different drug or adjust the dosage if possible.")
     else:    
-    give = round(give)
-    interval = st.number_input("Please choose desired dosage interval: every 8 - 12 hours (General pain management) \n\nThe recommended interval for cancer-related pain is every 6 hours.")
-    trama_print = (f"Tramadol 50mg \nGive {give} cap/s every {interval} hours for 7 - 14 days.
-    st.write(trama_print)
-    return trama_print
+        give = round(give)
+        interval = st.number_input("Please choose desired dosage interval: every 8 - 12 hours (General pain management) \n\nThe recommended interval for cancer-related pain is every 6 hours.")
+        trama_print = (f"Tramadol 50mg \nGive {give} cap/s every {interval} hours for 7 - 14 days.
+        st.write(trama_print)
+        return trama_print
     
 
 def lidocaine():
