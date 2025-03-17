@@ -613,7 +613,7 @@ def tramadol():
     trama_dosage = st.number_input("Please choose Tramadol dosage: 4 - 10 mg/kg")
     trama_cons = 50
     give = weight * trama_dosage / trama_cons
-    if give < 0.8
+    if give < 0.8:
         st.write ("Please choose a different drug or adjust the dosage if possible.")
     else:    
     give = round(give)
