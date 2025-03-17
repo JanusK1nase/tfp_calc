@@ -618,7 +618,7 @@ def tramadol():
     else:    
         give = round(give)
         interval = st.number_input("Please choose desired dosage interval: every 8 - 12 hours (General pain management) \n\nThe recommended interval for cancer-related pain is every 6 hours.")
-        trama_print = (f"Tramadol 50mg \nGive {give} cap/s every {interval} hours for 7 - 14 days.
+        trama_print = (f"Tramadol 50mg \nGive {give} cap/s every {interval} hours for 7 - 14 days.\n ")
         st.write(trama_print)
         return trama_print
     
