@@ -574,6 +574,11 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
+    elif drug == "tramadol":
+        result = tramadol()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+        
     
 
         
@@ -604,6 +609,20 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def tramadol():
+    trama_dosage = st.number_input("Please choose Tramadol dosage: 4 - 10 mg/kg")
+    trama_cons = 50
+    give = weight * trama_dosage / trama_cons
+    if give < 0.8
+        st.write ("Please choose a different drug or adjust the dosage if possible.")
+    else:    
+    give = round(give)
+    interval = st.number_input("Please choose desired dosage interval: every 8 - 12 hours (General pain management) \n\nThe recommended interval for cancer-related pain is every 6 hours.")
+    trama_print = (f"Tramadol 50mg \nGive {give} cap/s every {interval} hours for 7 - 14 days.
+    st.write(trama_print)
+    return trama_print
+    
+
 def lidocaine():
     if species == "dog" or species == "canine" or species == "can" or species == "c":
         firstgive = (weight / 20)
