@@ -620,7 +620,7 @@ def mannitol():
     dsg = st.number_input("Please choose Mannitol dosage: 500  - 1500 mg/kg")
     cons = 200
     give = (dsg * weight / cons)
-    give = (give:.2f)
+    give = (give:2f)
     infusion_duration = st.number_input("Please choose duration of infusion: 10 - 30 minutes")
     infusion_duration = int(infusion_duration)
     if infusion_duration == 10:
