@@ -630,7 +630,7 @@ def mannitol():
     elif infusion_duration == 30:
         x = 2
     mannitol_fluid_rate = (give * x)
-    mannitol_print = (f"Mannitol 20% (200mg/ml): Infuse {give} ml over {infusion_duration) minutes. \nINFUSION RATE: {mannitol_fluid_rate:1f} ml/hr")
+    mannitol_print = (f"Mannitol 20% (200mg/ml): Infuse {give} ml over {infusion_duration) minutes. \nINFUSION RATE: {mannitol_fluid_rate:.1f} ml/hr")
     st.write(mannitol_print)
     return mannitol_print
 
