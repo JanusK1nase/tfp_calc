@@ -620,7 +620,6 @@ def mannitol():
     dsg = st.number_input("Please choose Mannitol dosage: 500  - 1500 mg/kg")
     cons = 200
     give = (dsg * weight / cons)
-    give = (f"give:.2f")
     infusion_duration = st.number_input("Please choose duration of infusion: 10 - 30 minutes")
     infusion_duration = int(infusion_duration)
     if infusion_duration == 10:
@@ -630,7 +629,7 @@ def mannitol():
     elif infusion_duration == 30:
         x = 2
     mannitol_fluid_rate = (give * x)
-    mannitol_print = (f"Mannitol 20% (200mg/ml): Infuse {give} ml over {infusion_duration} minutes. \nINFUSION RATE: {mannitol_fluid_rate:.1f} ml/hr")
+    mannitol_print = (f"Mannitol 20% (200mg/ml): Infuse {give:.2f} ml over {infusion_duration} minutes. \nINFUSION RATE: {mannitol_fluid_rate:.1f} ml/hr")
     st.write(mannitol_print)
     return mannitol_print
 
