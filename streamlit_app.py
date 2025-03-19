@@ -580,7 +580,7 @@ def main ():
             st.session_state.results.append(result)
 
     elif drug == "mannitol":
-        result = mannitol():
+        result = mannitol()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
         
