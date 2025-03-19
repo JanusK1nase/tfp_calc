@@ -578,6 +578,13 @@ def main ():
         result = tramadol()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug == "mannitol":
+        result = mannitol():
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+        
+    
         
     
 
@@ -609,6 +616,24 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def mannitol():
+    dsg = st.number_input("Please choose Mannitol dosage: 500  - 1500 mg/kg")
+    cons = 200
+    give = (dsg * weight / cons)
+    give = (give:.2f)
+    infusion_duration = st.number_input("Please choose duration of infusion: 10 - 30 minutes")
+    infusion_duration = int(infusion_duration)
+    if infusion_duration == 10:
+        x = 6
+    elif infusion_duration == 20:
+        x = 3
+    elif infusion_duration == 30:
+        x = 2
+    mannitol_fluid_rate = (give * x)
+    mannitol_print = (f"Mannitol 20% (200mg/ml): Infuse {give} ml over {infusion_duration) minutes. \nINFUSION RATE: {mannitol_fluid_rate:1f} ml/hr")
+    st.write(mannitol_print)
+    return mannitol_print
+
 def tramadol():
     trama_dosage = st.number_input("Please choose Tramadol dosage: 4 - 10 mg/kg")
     trama_cons = 50
