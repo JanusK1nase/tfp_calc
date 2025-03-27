@@ -2150,7 +2150,7 @@ def pred():
         predgive = (weight * preddsg / predcons)
         drugprintpred = (f"Prednisone 10mg/5ml: \nGive {predgive:.1f} ml twice a day for 5 days. Then give {((predgive) / 2):.1f} ml once a day for another 5 days. \n ") 
     elif predcons == 5:
-        predgive = int(round_half_up((weight * doxykodsg / doxykocons)*4)) / 4
+        predgive = int(round_half_up((weight * preddsg / predcons)*4)) / 4
         if predgive == 0.25:
             tab = ("1/4")
                             
@@ -2191,7 +2191,7 @@ def pred():
             tab = ("3")
         drugprintpred = (f"Prednisone 5mg: \nGive {tab} ml twice a day for 5 days. Then give {tab} ml once a day for another 5 days. \n ") 
     elif predcons == 10:
-        predgive = int(round_half_up((weight * doxykodsg / doxykocons)*4)) / 4
+        predgive = int(round_half_up((weight * preddsg / predcons)*4)) / 4
         if predgive == 0.25:
             tab = ("1/4")
                             
