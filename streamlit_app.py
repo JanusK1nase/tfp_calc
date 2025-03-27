@@ -583,6 +583,12 @@ def main ():
         result = mannitol()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug == "pancreasolve":
+        result = pancreasolve()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+        
         
     
         
@@ -616,6 +622,15 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def pancreasolve():
+    if species in ["canine" , "dog" , "can"]:
+        dsg = st.text_input("Please choose Pancreasolve dosage: 2 - 3 tablets before every meal")
+    else:
+        dsg = st.text_input("Please choose Pancreasolve dosage: 1/2 - 1 tablet before every meal")
+    give = (f"Pancreasolve: \nGive {dsg} tablet/s 15 - 20 minutes before meals. Tablets can be given whole or crushed.\n ")
+    st.write(give)
+    return give
+
 def mannitol():
     dsg = st.number_input("Please choose Mannitol dosage: 500  - 1500 mg/kg")
     cons = 200
