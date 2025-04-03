@@ -1411,7 +1411,7 @@ def alumag():
 
 def melox():
     dsg = (weight * 0.1 / 1.5)
-    give = (f"Meloxicam 1.5mg/ml: \nDay 1: {dsg * 2 :.1f}ml once. \nThen give {dsg:.1f}ml once a day for 5 - 7 days.\n ")
+    give = (f"Meloxicam 1.5mg/ml: \nDay 1: {dsg * 2 :.2f}ml once. \nThen give {dsg:.2f}ml once a day for 5 - 7 days.\n ")
     st.write (give)
     return give
 
