@@ -588,6 +588,13 @@ def main ():
         result = pancreasolve()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug == "calphos":
+        result = calphos()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+    
         
         
     
@@ -601,6 +608,7 @@ def main ():
 
     st.write(st.session_state.results)
 
+    
     if st.button("Generate Rx"):
         generate_pdf(st.session_state.results)
         with open(f"{patientname} Rx.pdf", "rb") as file:
@@ -622,6 +630,16 @@ def main ():
             
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def calphos():
+    if weight < 9:
+        give = ("Calphos D3: \n give 1/2 tab once a day for 14 days.\n ")
+    else:
+        give = ("Calphos D3: \n give 1 tab once a day for 14 days.\n ")
+    st.write(give)
+    return give
+        
+                    
+
 def pancreasolve():
     if species in ["canine" , "dog" , "can"]:
         dsg = st.text_input("Please choose Pancreasolve dosage: 2 - 3 tablets before every meal")
