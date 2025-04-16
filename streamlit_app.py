@@ -685,14 +685,14 @@ def lidocaine():
     if species == "dog" or species == "canine" or species == "can" or species == "c":
         firstgive = (weight / 20)
         fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
-        crigive = (0.12 / fluidrate * 1000 / 20)
-        print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.1f} ml from fluid bottle then add {crigive:.1f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
+        crigive = (0.12 * weight / fluidrate * 1000 / 20)
+        print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.2f} ml from fluid bottle then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
         st.write (print)
         return print
     else:
         fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
-        crigive = (0.09 / fluidrate * 1000 / 20)
-        print = (f"Lidocaine 20mg/ml CRI: \nRemove {crigive:.1f} ml from fluid bottle then add {crigive:.1f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
+        crigive = (0.1 * weight / fluidrate * 1000 / 20)
+        print = (f"Lidocaine 20mg/ml CRI: \nRemove {crigive:.2f} ml from fluid bottle then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr \nUse with caution in cats (Lidocaine toxicity)")
         st.write (print)
         return print
 
