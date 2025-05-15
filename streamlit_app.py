@@ -2494,26 +2494,26 @@ if __name__ == "__main__":
     main()
 
 
-#uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
-#if uploaded_file is not None:
-    # Save the uploaded file to a temporary location
-    '''
-    file_extension = uploaded_file.name.split('.')[-1]
-    temp_file_path = f"temp_image.{file_extension}"
-    
-    with open(temp_file_path, "wb") as f:
-        f.write(uploaded_file.getbuffer())
-    
-    # Print the file path to verify
-    print(f"File saved to: {temp_file_path}")
-    
-    # Generate PDF with the uploaded image
-    results = ["Sample result 1", "Sample result 2"]
-    generate_pdf(results, temp_file_path)
-    st.success("PDF generated successfully!")
+# uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
+# if uploaded_file is not None:
+#     Save the uploaded file to a temporary location
+# '''
+# file_extension = uploaded_file.name.split('.')[-1]
+# temp_file_path = f"temp_image.{file_extension}"
 
-# Print the file path to verify
-    print(f"File saved to: {temp_file_path}")
-    print(f"File exists: {os.path.exists(temp_file_path)}")
-    '''
+# with open(temp_file_path, "wb") as f:
+#     f.write(uploaded_file.getbuffer())
+
+# # Print the file path to verify
+# print(f"File saved to: {temp_file_path}")
+
+# # Generate PDF with the uploaded image
+# results = ["Sample result 1", "Sample result 2"]
+# generate_pdf(results, temp_file_path)
+# st.success("PDF generated successfully!")
+
+# #Print the file path to verify
+# print(f"File saved to: {temp_file_path}")
+# print(f"File exists: {os.path.exists(temp_file_path)}")
+# '''
 
