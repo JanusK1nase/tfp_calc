@@ -13,7 +13,7 @@ from datetime import datetime
 absolute_path = os.path.abspath("tfplogo.png")
 
 
-
+li
 
 smtp_server = "smtp-mail.outlook.com"
 smtp_port = 587
@@ -564,7 +564,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug == "lidocaine" or drug == "lidocaine cri":
+    elif drug == "lidocaine" or drug == "lidocaine cri" or drug == "lido"  or drug == "lido cri":
         result = lidocaine()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
@@ -685,10 +685,19 @@ def lidocaine():
     if species == "dog" or species == "canine" or species == "can" or species == "c":
         firstgive = (weight / 20)
         fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
-        crigive = (0.12 * weight / fluidrate * 1000 / 20)
-        print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.2f} ml from fluid bottle then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
-        st.write (print)
-        return print
+        lido_dosage = st.number_input("Please choose Lidocaine CRI dosage: 1.2 - 3 mg/kg/hr")
+        change_carrier = st.text_input("Change fluid carrier/bottle? (Yes or No) \nDefault fluid carrier is 1000ml.").lower()
+        if change_carrier in ["yes" , "y"]:
+            carrier = st.number_input("Please provide volume (ml): ")
+            crigive = (lido_dosage * weight / fluidrate * carrier / 20)
+            print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.2f} ml from fluid bottle then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
+            st.write (print)
+            return print
+        else:
+            crigive = (lido_dosage * weight / fluidrate * 1000 / 20)
+            print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.2f} ml from fluid bottle then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
+            st.write (print)
+            return print
     else:
         fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
         crigive = (0.1 * weight / fluidrate * 1000 / 20)
@@ -2207,7 +2216,7 @@ def pred():
 
         elif predgive == 3:
             tab = ("3")
-        drugprintpred = (f"Prednisone 5mg: \nGive {tab} tab/s twice a day for 5 days. Then give {tab} ml once a day for another 5 days. \n ") 
+        drugprintpred = (f"Prednisone 5mg: \nGive {tab} tab/s twice a day for 5 days. Then give {tab} tab/s once a day for another 5 days. \n ") 
     elif predcons == 10:
         predgive = int(round_half_up((weight * preddsg / predcons)*4)) / 4
         if predgive == 0.25:
@@ -2248,7 +2257,7 @@ def pred():
 
         elif predgive == 3:
             tab = ("3")
-        drugprintpred = (f"Prednisone 10mg: \nGive {tab} tab/s twice a day for 5 days. Then give {tab} ml once a day for another 5 days. \n ")
+        drugprintpred = (f"Prednisone 10mg: \nGive {tab} tab/s twice a day for 5 days. Then give {tab} tab/s once a day for another 5 days. \n ")
     st.write (drugprintpred)
     return drugprintpred
     
