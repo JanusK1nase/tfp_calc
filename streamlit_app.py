@@ -600,11 +600,6 @@ def main ():
         
         
     
-        
-    
-
-        
-    
     else:
         st.write ("Refer to Drug Codex")
 
@@ -633,9 +628,51 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
-def darbe():
+def darbe(): 
+    if species in ["canine" , "can" , "dog"]:
+        darbe_dosage = st.number_input("Please choose Darbepoetin dosage: 0.45 – 1.5 mcg/kg ")
+        darbe_cons_chnge = st.text_input("Default concentration is 100mcg/ml (40mcg/0.4ml) \n\nChange concentration? (Yes or No)").lower()
+        darbe_interval = st.selectbox(
+            "Please choose dose interval. Recommendation: q7d until low end of target PCV range is reached. \nWhen target PCV is reached, dosing interval is extended as tolerated (eg, to every 2–3 wk)",
+            ("every 7 days" , "every 2 weeks" , "every 3 weeks"),
+            index=None,
+            placeholder="Select dose interval..",
+        )
+        if darbe_cons_chnge == "yes":
+            darbe_cons = st.number_input("Please provide available concentration: ___mcg/ml")
+            darbegive = (darbe_dosage * weight / darbe_cons)
+            darbe_cons = int(darbe_cons)
+            darbeprint = (f"Darbepoetin alfa {darbe_cons}mcg/ml: \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            st.write(darbeprint)
+            return darbeprint
+        else:
+            darbegive = (darbe_dosage * weight / darbe_cons)
+            darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml: \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            st.write(darbeprint)
+            return darbeprint
+    else:
+        darbe_dosage = st.number_input("Please choose Darbepoetin dosage: 0.7 – 1.8 mcg/kg ")
+        darbe_cons_chnge = st.text_input("Default concentration is 100mcg/ml (40mcg/0.4ml) \n\nChange concentration? (Yes or No)").lower()
+        darbe_interval = st.selectbox(
+            "Please choose dose interval. Recommendation: q7d until low end of target PCV range is reached. \nWhen target PCV is reached, dosing interval is extended as tolerated (eg, to every 2–3 wk)",
+            ("every 7 days" , "every 2 weeks" , "every 3 weeks"),
+            index=None,
+            placeholder="Select dose interval..",
+        )
+        if darbe_cons_chnge == "yes":
+            darbe_cons = st.number_input("Please provide available concentration: ___mcg/ml")
+            darbegive = (darbe_dosage * weight / darbe_cons)
+            darbe_cons = int(darbe_cons)
+            darbeprint = (f"Darbepoetin alfa {darbe_cons}mcg/ml: \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            st.write(darbeprint)
+            return darbeprint
+        else:
+            darbegive = (darbe_dosage * weight / darbe_cons)
+            darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml: \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            st.write(darbeprint)
+            return darbeprint
+            
     
-
 def calphos():
     if weight < 9:
         give = ("Calphos D3: \n give 1/2 tab once a day for 14 days.\n ")
