@@ -642,12 +642,12 @@ def darbe():
             darbe_cons = st.number_input("Please provide available concentration: ___mcg/ml")
             darbegive = (darbe_dosage * weight / darbe_cons)
             darbe_cons = int(darbe_cons)
-            darbeprint = (f"Darbepoetin alfa {darbe_cons}mcg/ml: \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            darbeprint = (f"Darbepoetin alfa {darbe_cons}mcg/ml: \nInject {darbegive:.2f}ml SQ {darbe_interval}. \n ")
             st.write(darbeprint)
             return darbeprint
         else:
             darbegive = (darbe_dosage * weight / 100)
-            darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml (100mcg/ml): \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml (100mcg/ml): \nInject {darbegive:.2f}ml SQ {darbe_interval}. \n ")
             st.write(darbeprint)
             return darbeprint
     else:
@@ -663,13 +663,13 @@ def darbe():
             darbe_cons = st.number_input("Please provide available concentration: ___mcg/ml")
             darbegive = (darbe_dosage * weight / darbe_cons)
             darbe_cons = int(darbe_cons)
-            darbeprint = (f"Darbepoetin alfa {darbe_cons}mcg/ml: \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            darbeprint = (f"Darbepoetin alfa {darbe_cons}mcg/ml: \nInject {darbegive:.2f}ml SQ {darbe_interval}. \n ")
             st.write(darbeprint)
             return darbeprint
         else:
     
             darbegive = (darbe_dosage * weight / 100)
-            darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml: \nInject {darbegive:.2f} {darbe_interval}. \n ")
+            darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml: \nInject {darbegive:.2f}ml SQ {darbe_interval}. \n ")
             st.write(darbeprint)
             return darbeprint
             
