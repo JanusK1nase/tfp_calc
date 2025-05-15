@@ -593,7 +593,10 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    
+    elif drug in ["darbe" , "darbepoetin"]:
+        result = darbe()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
         
         
     
@@ -628,7 +631,11 @@ def main ():
             server.sendmail(sender_email, "recipient_email@example.com", msg.as_string())
             
 
+
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def darbe():
+    
+
 def calphos():
     if weight < 9:
         give = ("Calphos D3: \n give 1/2 tab once a day for 14 days.\n ")
@@ -685,16 +692,16 @@ def lidocaine():
         firstgive = (weight / 20)
         fluidrate = st.number_input("Please indicate patient's current fluid rate: ")
         lido_dosage = st.number_input("Please choose Lidocaine CRI dosage: 1.2 - 3 mg/kg/hr")
-        change_carrier = st.text_input("Change fluid carrier/bottle? (Yes or No) \nDefault fluid carrier is 1000ml.").lower()
+        change_carrier = st.text_input("Change fluid carrier/bottle? (Yes or No) \n\nDefault fluid carrier is 1000ml.").lower()
         if change_carrier in ["yes" , "y"]:
             carrier = st.number_input("Please provide volume (ml): ")
             crigive = (lido_dosage * weight / fluidrate * carrier / 20)
             print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.2f} ml from fluid bottle then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
-            st.write (print)
+            st.write (print)  
             return print
         else:
             crigive = (lido_dosage * weight / fluidrate * 1000 / 20)
-            print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.2f} ml from fluid bottle then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
+            print = (f"Lidocaine 20mg/ml CRI: Give {firstgive:.2f} ml IV ONCE. \nRemove {crigive:.2f} ml from fluid bottle (1000ml) then add {crigive:.2f} ml of Lidocaine. \nFluid Rate: {fluidrate} ml/hr")
             st.write (print)
             return print
     else:
@@ -1889,7 +1896,7 @@ def cefurox():
     cefuroxdsg = st.number_input("Please choose Cefuroxime axetil dosage: 10 - 20mg/kg: ")
     cefuroxcons = 50
     cefuroxgive = (weight * cefuroxdsg / cefuroxcons)
-    cefuprint = (f"Cefuroxime axetil 250mg/5ml: \nGive {cefuroxgive:.1f} ml twice a day for 14 days.")
+    cefuprint = (f"Cefuroxime axetil 250mg/5ml: \nGive {cefuroxgive:.1f} ml twice a day for 14 days.\n ")
     st.write (f"Cefuroxime axetil 250mg/5ml: \nGive {cefuroxgive:.1f} ml twice a day for 14 days.")
     return cefuprint
 
