@@ -380,7 +380,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug == "profopol" or drug == "profo":
+    elif drug == "profopol" or drug == "profo" or drug == "propofol" or drug == "propo":
         result = profo()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
@@ -1123,16 +1123,16 @@ def actea():
 
 def profo():
     if species == "dog" or species == "canine" or species == "can" or species == "c":
-        dsg = st.number_input("Please choose Profopol dosage: 2 - 6 mg/kg")
+        dsg = st.number_input("Please choose Propofol dosage: 2 - 6 mg/kg")
         give = (weight * dsg / 10)
-        print = (f"Profopol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
+        print = (f"Propofol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
         st.write (print)
         return print
 
     elif species == "cat" or species == "feline" or species == "fel":
-        dsg = st.number_input("Please choose Profopol dosage: 4 - 8 mg/kg")
+        dsg = st.number_input("Please choose Propofol dosage: 4 - 8 mg/kg")
         give = (weight * dsg / 10)
-        print = (f"Profopol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
+        print = (f"Propopol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
         st.write (print)
         return print
     
