@@ -13,7 +13,6 @@ from datetime import datetime
 absolute_path = os.path.abspath("tfplogo.png")
 
 
-li
 
 smtp_server = "smtp-mail.outlook.com"
 smtp_port = 587
