@@ -1532,7 +1532,7 @@ def hepatiale():
             index="Capsule",
             placeholder="...",
         )
-    if which_hepatiale = "Capsule"
+    if which_hepatiale == "Capsule"
         if weight <= 5:
             hepagive = ("Hepatiale Forte: \nGive 1 capsule once a day for 14 days. May be used as a supplement. \n ")
             st.write (hepagive)
@@ -1542,7 +1542,7 @@ def hepatiale():
             hepagive = (f"Hepatiale Forte: \nGive {hepa} capule/s once a day for 14 days. May be used as a supplement. \n ")
             st.write (hepagive)
             return hepagive  
-    elif which_hepatiale = "Liquid"
+    elif which_hepatiale == "Liquid"
         dsg = (weight * 5 / 10)
         hepagive = (f"Hepatiale Forte: \nGive {dsg:.1f}ml once a day for 14 days. May be used as a supplement. \n ")
         st.write (hepagive)
