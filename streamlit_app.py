@@ -598,7 +598,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug in ["propocri" , "propo cri" , "propofol cri" , "profo cri" , "profopol"]:
+    elif drug in ["propocri" , "propo cri" , "propofol cri" , "profo cri" , "profopol cri"]:
         result = propocri()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
@@ -637,7 +637,7 @@ def propocri():
     propo_cri_dsg = st.number_input("Please choose Profopol 10mg/ml CRI dosage: 0.1 - 0.6mg/kg/min")
     propo_cri = (weight * propo_cri_dsg / 10 * 60)
     propo_duration = st.number_input("Please choose duration of CRI : 6 - 12 hours. Up to 48 hours in dogs. \n\nFor cats, the CRI dose and duration should be short as possible.")
-    propo_full_dose = (poropo_cri * propo_duration)
+    propo_full_dose = (propo_cri * propo_duration)
     propo_duration = int(propo_duration)
     propo_instructions = (f"Poropofol 10mg/ml for SEIURES! \nGive {propo_first_give_range_1:.1f}ml up to {propo_first_give_range_2:.1f}ml SLOW IV TO EFFECT! \nPrepare {propo_full_dose:.2f}ml for CRI. Syringe pump/Infusion pump rate: {propo_cri:.1f}ml/hr. Duration:{propo_duration}hrs \nDO NOT mix directly with fluid bottle.")
     st.write (propo_instructions)
