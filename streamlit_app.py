@@ -1526,15 +1526,27 @@ def renalcombi():
 
 
 def hepatiale():
-    if weight >= 10 and weight < 11:
-        hepagive = ("Hepatiale Forte: \nGive 2 capules once a day for 14 days.\n ")
-    elif weight < 10:
-        hepagive = ("Hepatiale Forte: \nGive 1 capsule once a day for 14 days.\n ")
-    elif weight >= 11:
-        dsg = (weight / 5)
-        hepagive = (f"Hepatiale Forte: \nGive {dsg:.1f}ml once a day for 14 days.\n ")
-    st.write (hepagive)
-    return hepagive
+    which_hepatiale = st.selectbox(
+            "Hepatiale Forte: Liquid or Capsule?",
+            ("Liquid" , "Capsule" ),
+            index="Capsule",
+            placeholder="...",
+        )
+    if which_hepatiale = "Capsule"
+        if weight <= 5:
+            hepagive = ("Hepatiale Forte: \nGive 1 capsule once a day for 14 days. May be used as a supplement. \n ")
+            st.write (hepagive)
+            return hepagive
+        else:
+            hepa = round(1 * weight / 5)
+            hepagive = (f"Hepatiale Forte: \nGive {hepa} capule/s once a day for 14 days. May be used as a supplement. \n ")
+            st.write (hepagive)
+            return hepagive  
+    elif which_hepatiale = "Liquid"
+        dsg = (weight * 5 / 10)
+        hepagive = (f"Hepatiale Forte: \nGive {dsg:.1f}ml once a day for 14 days. May be used as a supplement. \n ")
+        st.write (hepagive)
+        return hepagive
 
 
 def entero():
@@ -1546,7 +1558,7 @@ def entero():
         x = 4
     else:
         x = 2
-    enterogive = (f"EnteroProtek:\nGive {x}ml once to twice a day for 14 days. \nGIVE ONLY ONCE A DAY if given with antibiotics.\n ")
+    enterogive = (f"EnteroProtek:\nGive {x}ml once to twice a day for 14 days. May be used as a supplement. \nGIVE ONLY ONCE A DAY if given with antibiotics.\n ")
     st.write (enterogive)
     return enterogive
 
