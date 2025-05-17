@@ -639,7 +639,7 @@ def propocri():
     propo_duration = st.number_input("Please choose duration of CRI : 6 - 12 hours. Up to 48 hours in dogs. \n\nFor cats, the CRI dose and duration should be short as possible.")
     propo_full_dose = (propo_cri * propo_duration)
     propo_duration = int(propo_duration)
-    propo_instructions = (f"Poropofol 10mg/ml for SEIURES! \nGive {propo_first_give_range_1:.1f}ml up to {propo_first_give_range_2:.1f}ml SLOW IV TO EFFECT! \nPrepare {propo_full_dose:.2f}ml for CRI. Syringe pump/Infusion pump rate: {propo_cri:.1f}ml/hr. Duration:{propo_duration}hrs \nDO NOT mix directly with fluid bottle.")
+    propo_instructions = (f"Propofol 10mg/ml for SEIURES! \n\nGive {propo_first_give_range_1:.1f}ml up to {propo_first_give_range_2:.1f}ml SLOW IV TO EFFECT! \n\nPrepare {propo_full_dose:.2f}ml for CRI. Syringe pump/Infusion pump rate: {propo_cri:.1f}ml/hr. Duration:{propo_duration} hours \n\nDO NOT mix directly with fluid bottle.")
     st.write (propo_instructions)
     return propo_instructions
     
