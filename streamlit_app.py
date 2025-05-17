@@ -1529,7 +1529,7 @@ def hepatiale():
     which_hepatiale = st.selectbox(
             "Hepatiale Forte: Liquid or Capsule?",
             ("Liquid" , "Capsule" ),
-            index="Capsule",
+            index=None,
             placeholder="...",
         )
     if which_hepatiale == "Capsule":
