@@ -598,7 +598,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-    elif drug in ["propocri" , "propo cri" , "propofol cri"]
+    elif drug in ["propocri" , "propo cri" , "propofol cri"]:
         result = propocri()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
