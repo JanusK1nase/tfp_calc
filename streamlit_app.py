@@ -608,7 +608,11 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-        
+    elif drug == "lisybin"  or  drug == "silybin":
+        result = lisybin()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+    
     else:
         st.write ("Refer to Drug Codex")
 
@@ -636,7 +640,49 @@ def main ():
             
 
 
-#int(round_half_up((weight * dsg / cons)*4)) / 44
+#int(round_half_up((weight * dsg / cons)*4)) / 4
+ 
+def lisybin():
+    give = int(round_half_up((weight * 18 / 90)*4)) / 4
+    if give == 0.25:
+        tab = ("1/4")
+
+    elif give == 0.5:
+        tab = ("1/2")
+
+    elif give == 0.75:
+        tab = ("3/4")
+    
+    elif give == 1:
+        tab = ("1")
+
+    elif give == 1.25:
+        tab = ("1 and 1/4")
+
+    elif give == 1.5:
+        tab = ("1 and 1/2")
+
+    elif give == 1.75:
+        tab = ("1 and 3/4")
+    
+    elif give == 2:
+        tab = ("2")
+
+    elif give == 2.25:
+        tab = ("2 and 1/4")
+    
+    elif give == 2.5:
+        tab = ("2 and 1/2")
+
+    elif give == 2.75:
+        tab = ("2 and 3/4")
+
+    elif give == 3:
+        tab = ("3")
+    print = (f"SAMe and Silybin A+B (Lisybin): \nGive {tab} tab/s once a day for 14 days.  May be used as a supplement. \nGive on an empty stomach.\n ")
+    st.write (print)
+    return print
+
 def carprofen():
     if species in ["canine", "dog" , "can"]:
         carprofen_dsg = st.selectbox(
