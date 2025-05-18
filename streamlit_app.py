@@ -662,7 +662,7 @@ def carprofen():
         )
     if carprofen_cons == "25":
         cons = 25
-    elif carprofen_cons == "100"
+    elif carprofen_cons == "100":
         cons = 100
     give = int(round_half_up((weight * dsg / cons)*4)) / 4
     if give == 0.25:
