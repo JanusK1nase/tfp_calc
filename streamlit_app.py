@@ -640,7 +640,7 @@ def main ():
 def carprofen():
     if species in ["canine", "dog" , "can"]:
         carprofen_dsg = st.selectbox(
-                "Please choose dosage: "
+                "Please choose dosage: ",
                 ("2.2 mg/kg (BID)" , "4.4mg/kg (SID"),
                 index=None,
                 placeholder="Select dosage...",
