@@ -612,6 +612,12 @@ def main ():
         result = lisybin()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug == "orapet"
+        result = orapet()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+    
     
     else:
         st.write ("Refer to Drug Codex")
@@ -641,7 +647,11 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
- 
+def orapet():
+    oraprint = ("Orapet: \nPut 7 drops in a spoon or a syringe, then administer directly on the tongue. DO NOT give food and water for 30 minutes. \nShake well before use. \n ")
+    st.write (oraprint)
+    return oraprint
+
 def lisybin():
     give = int(round_half_up((weight * 18 / 90)*4)) / 4
     if give == 0.25:
