@@ -602,6 +602,12 @@ def main ():
         result = propocri()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug in ["carprofen" , "carpro" , "carodyl"]:
+        result = carprofen()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
         
     else:
         st.write ("Refer to Drug Codex")
@@ -630,7 +636,75 @@ def main ():
             
 
 
-#int(round_half_up((weight * dsg / cons)*4)) / 4
+#int(round_half_up((weight * dsg / cons)*4)) / 44
+def carprofen():
+    if species in ["canine", "dog" , "can"]:
+        carprofen_dsg = st.selectbox(
+                "Please choose dosage: "
+                ("2.2 mg/kg (BID)" , "4.4mg/kg (SID"),
+                index=None,
+                placeholder="Select dosage...",
+            )
+        if carprofen_dsg == "2.2 mg/kg (BID)":
+            dsg = 2.2
+            interval = "twice a day"
+        else:
+            dsg = 4.4
+            interval = "once a day"
+    else:
+        dsg = 0.5
+        interval = "once a day"
+    carprofen_cons = st.selectbox(
+            "Please choose concentration: "
+            ("25" , "100"),
+            index=None,
+            placeholder="Select concentration interval..",
+        )
+    if carprofen_cons == "25":
+        cons = 25
+    elif carprofen_cons == "100"
+        cons = 100
+    give = int(round_half_up((weight * dsg / cons)*4)) / 4
+    if give == 0.25:
+        tab = ("1/4")
+
+    elif give == 0.5:
+        tab = ("1/2")
+
+    elif give == 0.75:
+        tab = ("3/4")
+
+    elif give == 1:
+        tab = ("1")
+    
+    elif give == 2:
+        tab = ("2")
+
+    elif give == 1.25:
+        tab = ("1 and 1/4")
+
+    elif give == 1.5:
+        tab = ("1 and 1/2")
+
+    elif give == 1.75:
+        tab = ("1 and 3/4")
+    
+    elif give == 2.25:
+        tab = ("2 and 1/4")
+    
+    elif give == 2.5:
+        tab = ("2 and 1/2")
+
+    elif give == 2.75:
+        tab = ("2 and 3/4")
+
+    elif give == 3:
+        tab = ("3")
+    carprofenprint = (f"Carprofen (Carodyl) {carprofen_cons}mg: \nGive {tab} tab/s {interval} for 7 - 14 days.\n ")
+    st.write (carprofenprint)
+    return carprofenprint
+
+
 def propocri():
     propo_first_give_range_1 = (weight * 1 / 10)
     propo_first_give_range_2 = (weight * 6 / 10)
