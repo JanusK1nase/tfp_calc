@@ -655,7 +655,7 @@ def carprofen():
         dsg = 0.5
         interval = "once a day"
     carprofen_cons = st.selectbox(
-            "Please choose concentration: "
+            "Please choose concentration: ",
             ("25" , "100"),
             index=None,
             placeholder="Select concentration interval..",
