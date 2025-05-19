@@ -1279,7 +1279,7 @@ def profo():
     elif species == "cat" or species == "feline" or species == "fel":
         dsg = st.number_input("Please choose Propofol dosage: 4 - 8 mg/kg")
         give = (weight * dsg / 10)
-        print = (f"Propopol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
+        print = (f"Propofol 10mg/ml: {give:.2f}ml VERY SLOW IV - TITRATE TO EFFECT!")
         st.write (print)
         return print
     
