@@ -1266,7 +1266,7 @@ def atro():
         )
         if choose_cons == "1mg/ml":
             cons = 1
-        elif choose_cons == "0.65mg/ml (Atrosite)"
+        elif choose_cons == "0.65mg/ml (Atrosite)":
             cons = 0.65
         give = (weight * dsg / cons)
         if cons = 0.65:
