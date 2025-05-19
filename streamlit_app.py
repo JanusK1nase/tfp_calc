@@ -1269,7 +1269,7 @@ def atro():
         elif choose_cons == "0.65mg/ml (Atrosite)":
             cons = 0.65
         give = (weight * dsg / cons)
-        if cons = 0.65:
+        if cons == 0.65:
             print = (f"Atropine: {give:.2f}ml SQ/IM as ordered.")
         else:
             print = (f"Atropine: {give:.2f}ml IV/IM as ordered.")
