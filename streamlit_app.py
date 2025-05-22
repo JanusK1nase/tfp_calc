@@ -623,14 +623,16 @@ def main ():
         st.write ("Refer to Drug Codex")
 
     st.write("Saved Medicines:")
+    remove_index = None
     for i, item in enumerate(st.session_state.results):
         col1, col2 = st.columns([8, 1])
         with col1:
             st.write(f"{i+1}. {item}")
         with col2:
             if st.button("Remove", key=f"remove_{i}"):
-                st.session_state.results.pop(i)
-                st.experimental_rerun()
+                remove_index = i
+    if remove_index is not None:
+        st.session_state.results.pop(remove_index)
 
     
     if st.button("Generate Rx"):
