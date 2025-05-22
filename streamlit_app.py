@@ -1745,7 +1745,7 @@ def generate_pdf(results):
     indent = 4  # Set the indentation level
     pdf.cell(indent)
     pdf.cell(80, 10, txt=f"Patient Name: {patientname}", ln =False, align='L')
-    pdf.cell(100, 10, txt=f"Date: {datetime.now().strftime('%m-%d-%Y')}", ln=True, align="R") 
+    pdf.cell(100, 10, txt=f"    {datetime.now().strftime('%m-%d-%Y')}", ln=True, align="R") 
     pdf.cell(indent)
     pdf.cell(200, 10, txt=f"Species: {species}", ln=True, align='L')
     pdf.cell(indent)
