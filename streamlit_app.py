@@ -622,7 +622,15 @@ def main ():
     else:
         st.write ("Refer to Drug Codex")
 
-    st.write(st.session_state.results)
+    st.write("Saved Medicines:")
+    for i, item in enumerate(st.session_state.results):
+        col1, col2 = st.columns([8, 1])
+        with col1:
+            st.write(f"{i+1}. {item}")
+        with col2:
+            if st.button("Remove", key=f"remove_{i}"):
+                st.session_state.results.pop(i)
+                st.experimental_rerun()
 
     
     if st.button("Generate Rx"):
