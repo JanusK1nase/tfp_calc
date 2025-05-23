@@ -1893,7 +1893,7 @@ def bsa():
 
 def cri():
     #choose drug then show dosage per hour?
-    dsg_per_hr = st.number_input("Please indicate drug dosage per hour in mg: " , step=0.0001)
+    dsg_per_hr = st.number_input("Please indicate drug dosage per hour in mg: " , step=0.0001 , format="%.5f")
     fluidrate = st.number_input("Please indicate fluid rate in ml per hour: ")
     bottle_volume = st.number_input("Please indicate the volume of bottle or carrier: ")
     drugcons = st.number_input("Please indicate drug conentration in mg: ")
