@@ -1155,7 +1155,7 @@ def immuheal():
 
 def lsametine():
         give = (weight / 5)
-        print = (f"L-Sametine: \nGive {give:.1f} tiwce a day as supplement.\n ")
+        print = (f"L-Sametine: \nGive {give:.1f} ml twice a day as supplement.\n ")
         st.write (print)
         return print
 
