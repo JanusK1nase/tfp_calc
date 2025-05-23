@@ -1897,7 +1897,7 @@ def cri():
     fluidrate = st.number_input("Please indicate fluid rate in ml per hour: ")
     bottle_volume = st.number_input("Please indicate the volume of bottle or carrier: ")
     drugcons = st.number_input("Please indicate drug conentration in mg: ")
-    crigive = (dsg_per_hr / fluidrate * bottle_volume / drugcons)
+    crigive = (dsg_per_hr * weight / fluidrate * bottle_volume / drugcons)
     printcri = (f"Remove {crigive:.1f} ml from {bottle_volume} ml of carrier, then add {crigive:.1f} ml.")
     st.write (printcri)
     return printcri
