@@ -807,7 +807,7 @@ def darbe():
             darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml (100mcg/ml): \nInject {darbegive:.2f}ml SQ {darbe_interval}. \n ")
             st.write(darbeprint)
             return darbeprint
-    else:
+    elif species in ["feline" , "fel" , "cat"]:
         darbe_dosage = st.number_input("Please choose Darbepoetin dosage: 0.7 – 1.8 mcg/kg ")
         darbe_cons_chnge = st.text_input("Default concentration is 100mcg/ml (40mcg/0.4ml) \n\nChange concentration? (Yes or No)").lower()
         darbe_interval = st.selectbox(
@@ -816,7 +816,7 @@ def darbe():
             index=None,
             placeholder="Select dose interval..",
         )
-        if darbe_cons_chnge == "yes":
+        if darbe_cons_chnge in ["yes" , "y"]:
             darbe_cons = st.number_input("Please provide available concentration: ___mcg/ml")
             darbegive = (darbe_dosage * weight / darbe_cons)
             darbe_cons = int(darbe_cons)
@@ -824,7 +824,6 @@ def darbe():
             st.write(darbeprint)
             return darbeprint
         else:
-    
             darbegive = (darbe_dosage * weight / 100)
             darbeprint = (f"Darbepoetin alfa 40mcg/0.4ml: \nInject {darbegive:.2f}ml SQ {darbe_interval}. \n ")
             st.write(darbeprint)
