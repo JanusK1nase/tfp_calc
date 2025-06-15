@@ -618,7 +618,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-     elif drug in ["cepha" , "cefa" , "cephalexin" , "cefalexin"]:
+    elif drug in ["cepha" , "cefa" , "cephalexin" , "cefalexin"]:
         result = cepha()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
