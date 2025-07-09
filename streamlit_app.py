@@ -627,6 +627,11 @@ def main ():
         result = clopridogel()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+     elif drug in ["atenolol"]:
+        result = atenolol()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
     else:
         st.write ("Refer to Drug Codex")
@@ -666,6 +671,35 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def atenolol():
+    if species in ["fel" , "feline" , "cat", "c"]:
+        atenolol_dsg = st.selectbox(
+                "Please choose dosage: ",
+                ("6.25mg (common initial)" , "12.5mg"),
+                index=None,
+                placeholder="Select dosage...",
+            )
+        if atenolol_dsg == "6.25mg (common initial)":
+            dsg = "1/4"
+        else:
+            dsg = "1/2"
+        atenolol_freq = st.selectbox(
+                "Please choose frequency: ",
+                ("BID (preferred)" , "SID (for geriatric or those with mild HCM"),
+                index=None,
+                placeholder="Select frequency...",
+            )
+        if atenolol_freq == "BID (preferred)":
+            freq = "twice a day"
+        else:
+            freq = "once a day"
+        atenolol_print = (f"Atenolol 25mg: \nGive {dsg} tab {freq} as maintenance or as instructed: \nGive on an empty stomach. \n ")
+    else:
+        atenolol_print = ("Code for canine not yet included. Hehe. But 0.2 - 1mg/kg. Most likely for compounding.")
+    st.write (atenolol_print)
+    return atenolol_print
+
+
 def clopridogel():
     if species in ["fel" , "feline" , "cat", "c"]:
         clopridoprint = ("Clopridogel 75mg: \nGive 1/4 tablet once a day as maintenance or as instructed: \n ")
