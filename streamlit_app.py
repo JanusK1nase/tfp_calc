@@ -667,7 +667,7 @@ def main ():
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
 def clopridogel():
-    if species in ["fel" , "feline" , "cat", "c"]
+    if species in ["fel" , "feline" , "cat", "c"]:
         clopridoprint = ("Clopridogel 75mg: \nGive 1/4 tablet once a day as maintenance or as instructed: \n ")
     else:
         clopridodsg = st.number_input("Please choose Clopridogel dosage: 1 - 2 mg/kg")
