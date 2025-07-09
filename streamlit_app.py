@@ -676,7 +676,7 @@ def clopridogel():
         st.write (loadingdoseprint)
         give = int(round_half_up((weight * clopridodsg / 75)*4)) / 4
         if give == 0.25:
-        tab = ("1/4")
+            tab = ("1/4")
 
         elif give == 0.5:
             tab = ("1/2")
