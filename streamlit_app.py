@@ -628,7 +628,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
 
-     elif drug in ["atenolol"]:
+    elif drug in ["atenolol"]:
         result = atenolol()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
