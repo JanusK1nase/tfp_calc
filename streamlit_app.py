@@ -623,6 +623,10 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
     
+    elif drug in ["clopridogel", "cloprido"]:
+        result = clopridogel()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
     else:
         st.write ("Refer to Drug Codex")
@@ -662,6 +666,56 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def clopridogel():
+    if species in ["fel" , "feline" , "cat", "c"]
+        clopridoprint = ("Clopridogel 75mg: \nGive 1/4 tablet once a day as maintenance or as instructed: \n ")
+    else:
+        clopridodsg = st.number_input("Please choose Clopridogel dosage: 1 - 2 mg/kg")
+        loadingdose = int(round_half_up((weight * clopridodsg / 75)*4)) / 4
+        loadingdoseprint = (f"A loading dose of {loadingdose} tab (75mg) is recommended depending on the severity of the disease.")
+        st.write (loadingdoseprint)
+        give = int(round_half_up((weight * clopridodsg / 75)*4)) / 4
+        if give == 0.25:
+        tab = ("1/4")
+
+        elif give == 0.5:
+            tab = ("1/2")
+
+        elif give == 0.75:
+            tab = ("3/4")
+    
+        elif give == 1:
+            tab = ("1")
+
+        elif give == 1.25:
+            tab = ("1 and 1/4")
+
+        elif give == 1.5:
+            tab = ("1 and 1/2")
+
+        elif give == 1.75:
+            tab = ("1 and 3/4")
+    
+        elif give == 2:
+            tab = ("2")
+
+        elif give == 2.25:
+            tab = ("2 and 1/4")
+    
+        elif give == 2.5:
+            tab = ("2 and 1/2")
+
+        elif give == 2.75:
+            tab = ("2 and 3/4")
+
+        elif give == 3:
+            tab = ("3")
+        clopridoprint = (f"Clopridogel 75mg: \nGive {tab} once a day as maintenance or as intructed: \n ")
+    st.write (clopridoprint)
+    return clopridoprint
+        
+        
+
 def cepha():
     cephadsg = st.number_input("Please choose Cephalexin dosage: 22 - 25mg/kg")
     cephagive = (weight * cephadsg / 50)
