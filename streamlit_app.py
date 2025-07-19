@@ -1488,7 +1488,7 @@ def broncure():
 
 def hemoglo():
     dsg = st.number_input("Please choose Ferrous sulfate dosage: 100 - 300 mg/dog")
-    give = (dsg / 80)
+    give = (weight * dsg / 80)
     print = (f"Hemoglo-Aide Plus: \nGive {give:.1f}ml once a day for 14 days.\n ")
     st.write (print)
     return print
