@@ -702,9 +702,9 @@ def atenolol():
 
 def clopridogel():
     if species in ["fel" , "feline" , "cat", "c"]:
-        clopridoprint = ("Clopridogel 75mg: \nGive 1/4 tablet once a day as maintenance or as instructed: \n ")
+        clopridoprint = ("Clopidogrel 75mg: \nGive 1/4 tablet once a day as maintenance or as instructed: \n ")
     else:
-        clopridodsg = st.number_input("Please choose Clopridogel dosage: 1 - 2 mg/kg")
+        clopridodsg = st.number_input("Please choose Clopidogrel dosage: 1 - 2 mg/kg")
         loadingdose = int(round_half_up((weight * clopridodsg / 75)*4)) / 4
         loadingdoseprint = (f"A loading dose of {loadingdose} tab (75mg) is recommended depending on the severity of the disease.")
         st.write (loadingdoseprint)
@@ -744,7 +744,7 @@ def clopridogel():
 
         elif give == 3:
             tab = ("3")
-        clopridoprint = (f"Clopridogel 75mg: \nGive {tab} once a day as maintenance or as intructed: \n ")
+        clopridoprint = (f"Clopidogrel 75mg: \nGive {tab} once a day as maintenance or as intructed: \n ")
     st.write (clopridoprint)
     return clopridoprint
         
