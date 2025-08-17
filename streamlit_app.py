@@ -2602,12 +2602,12 @@ def doxy():
     doxycons =  20
     doxygive = (weight * doxydsg / doxycons)
     if doxydsg == 5:
-        drugprintdoxy = (f"Doxcycline 100mg/5ml: \nGive {doxygive:.1f} ml twice a day for 14 days.\n ")
+        drugprintdoxy = (f"Doxcycline 100mg/5ml: \nGive {doxygive:.1f} ml twice a day for 14 days. Space 4 - 6 hours with iron supplements.\n ")
         st.write (drugprintdoxy)
         return drugprintdoxy
     
     else:
-        drugprintdoxy = (f"Doxcycline 100mg/5ml: \nGive {doxygive:.1f} ml once a day for 14 days.\n ")
+        drugprintdoxy = (f"Doxcycline 100mg/5ml: \nGive {doxygive:.1f} ml once a day for 14 days. Space 4 - 6 hours with iron supplements.\n ")
         st.write (drugprintdoxy)
         return drugprintdoxy
     
