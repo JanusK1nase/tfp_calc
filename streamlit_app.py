@@ -31,7 +31,7 @@ st.header("Alpha version 1.0 by JRT DVM of The Furr Project QC")
 patientname = st.text_input("Patient Name: ")
 
 species = st.text_input("Species: ").lower().strip()
-weight = st.number_input("Patient Weight: " , min_value=0.0, step=0.01, format="%.2f")
+weight = st.number_input("Patient Weight: " , value=None, min_value=0.0, step=0.01, format="%.2f")
 # Call generate_pdf with species and weight
 if species == "cat" or species == "feline" or species == "fel":
     BSA = ((weight * 1000)**(2/3)) * 10 * 0.0001
