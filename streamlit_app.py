@@ -633,6 +633,11 @@ def main ():
         result = atenolol()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug in ["inside out" , "inside"]:
+        result = inside_out()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
     else:
         st.write ("Refer to Drug Codex")
@@ -672,6 +677,31 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def inside_out():
+    if species in ["fel" , "feline" , "cat", "c"]:
+        if weight < 3:
+            insideoutgive = "1/2"
+        else:
+            insideoutgive "1"
+        insideoutprint = (f"In-sideout: \nMix {insideoutgive} scoop daily as a supplement. May be divided between breakfast and dinner. \n ")
+    else:
+        if weight < 3:
+            insideoutgive = "1/2"
+        if weight < 10:
+            insideoutgive = "1"
+        if weight < 20:
+            insideoutgive = "2"
+        if weight <30:
+            insideoutgive = "3"
+        else:
+            insideoutgive = "4"
+        insideoutprint = (f"In-sideout: \nMix {insideoutgive} scoop/s daily as a supplement. May be divided between breakfast and dinner. \n ")
+    st.write (insideoutprint)
+    return insideoutprint
+            
+            
+            
+
 def atenolol():
     if species in ["fel" , "feline" , "cat", "c"]:
         atenolol_dsg = st.selectbox(
