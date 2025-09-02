@@ -682,7 +682,7 @@ def inside_out():
         if weight < 3:
             insideoutgive = "1/2"
         else:
-            insideoutgive "1"
+            insideoutgive = "1"
         insideoutprint = (f"In-sideout: \nMix {insideoutgive} scoop daily as a supplement. May be divided between breakfast and dinner. \n ")
     else:
         if weight < 3:
