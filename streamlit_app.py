@@ -687,11 +687,11 @@ def inside_out():
     else:
         if weight < 3:
             insideoutgive = "1/2"
-        if weight < 10:
+        elif weight < 10:
             insideoutgive = "1"
-        if weight < 20:
+        elif weight < 20:
             insideoutgive = "2"
-        if weight <30:
+        elif weight <30:
             insideoutgive = "3"
         else:
             insideoutgive = "4"
