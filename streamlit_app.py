@@ -2096,7 +2096,7 @@ def spiro():
     
     elif spirogive == 3:
         tab = ("3")
-    spiros = (f"Spironolactone 25mg: \nGive {tab} tab/s once a day for 7-14 days.\n ")
+    spiros = (f"Spironolactone 25mg: \nGive {tab} tab/s once a day for 7-14 days or as maintenance.\n ")
     st.write (spiros)
     return spiros
     
