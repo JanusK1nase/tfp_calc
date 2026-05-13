@@ -1372,7 +1372,7 @@ def acepro():
     return print
 
 def dcm():
-    dsg = st.number_input("Calcium dosage: 5 - 15 mg/kg IV")
+    dsg = st.number_input("Calcium dosage: 50 - 150 mg/kg IV")
     give = (weight * dsg / 180)
     print = (f"DCM: {give:.2f}ml VERY SLOW IV PRN")
     st.write(print)
