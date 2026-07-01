@@ -2272,7 +2272,7 @@ def cefurox():
 #coamoxiclav stuff
 def pimo():
     pimodsg = st.number_input("Please choose Pimobendan dosage: 0.25 - 0.3mg/kg (true range: 0.05 - 0.48mg/kg): " , key="pimodsg")
-     pimo_cons = st.selectbox(
+    pimo_cons = st.selectbox(
                 "Please choose concentration available: ",
                 ("1.25 mg" , "2.5 mg" , "5 mg", "10 mg"),
                 index=None,
