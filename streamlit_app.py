@@ -2287,45 +2287,45 @@ def pimo():
     elif pimo_cons == "10 mg":
         cons = 10
     pimogive_2 = int(round_half_up((weight * pimodsg / cons)*4)) / 4
-        if pimogive_2 == 0.25:
-            pimotab = ("1/4")
-                       
-        elif pimogive_2 == 0.5:
-            pimotab = ("1/2")
+    if pimogive_2 == 0.25:
+        pimotab = ("1/4")
+                   
+    elif pimogive_2 == 0.5:
+        pimotab = ("1/2")
 
-        elif pimogive_2 == 0.75:
-            pimotab = ("3/4")
+    elif pimogive_2 == 0.75:
+        pimotab = ("3/4")
+    
+    elif pimogive_2 == 1:
+        pimotab = ("1")
+
+    elif pimogive_2 == 1.25:
+        pimotab = ("1 and 1/4")
+
+    elif pimogive_2 == 1.5:
+        pimotab = ("1 and 1/2")
+
+    elif pimogive_2 == 1.75:
+        pimotab = ("1 and 3/4")
+
+    elif pimogive_2 == 2:
+        pimotab = ("2")
+
+    elif pimogive_2 == 2.25:
+        pimotab = ("2 and 1/4")
+    
+    elif pimogive_2 == 2.5:
+        pimotab = ("2 and 1/2")
+    
+    elif pimogive_2 == 2.75:
+        pimotab = ("2 and 3/4")
+    
+    elif pimogive_2 == 3:
+        pimotab = ("3")
         
-        elif pimogive_2 == 1:
-            pimotab = ("1")
-
-        elif pimogive_2 == 1.25:
-            pimotab = ("1 and 1/4")
-
-        elif pimogive_2 == 1.5:
-            pimotab = ("1 and 1/2")
-
-        elif pimogive_2 == 1.75:
-            pimotab = ("1 and 3/4")
-
-        elif pimogive_2 == 2:
-            pimotab = ("2")
-
-        elif pimogive_2 == 2.25:
-            pimotab = ("2 and 1/4")
-        
-        elif pimogive_2 == 2.5:
-            pimotab = ("2 and 1/2")
-        
-        elif pimogive_2 == 2.75:
-            pimotab = ("2 and 3/4")
-        
-        elif pimogive_2 == 3:
-            pimotab = ("3")
-            
-        pimoprint = (f"Pimobendan {cons}mg: \nGive {pimotab} tab twice a day as maintenance. \n ")
-        st.write (pimoprint)
-        return pimoprint
+    pimoprint = (f"Pimobendan {cons}mg: \nGive {pimotab} tab twice a day as maintenance. \n ")
+    st.write (pimoprint)
+    return pimoprint
 
 
 def retromad():
