@@ -624,7 +624,7 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
     
-    elif drug in ["clopridogel", "cloprido"]:
+    elif drug in ["clopridogel", "cloprido", "clopi", "clopidogrel"]:
         result = clopridogel()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
@@ -636,6 +636,11 @@ def main ():
 
     elif drug in ["inside out" , "inside"]:
         result = inside_out()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+
+    elif drug in ["flexi", "flexipaws", "ha"]:
+        result = flexipawsha()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
     
@@ -677,6 +682,19 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def flexipawsha():
+    if weight < 5:
+        flexipawshagive = "1.25"
+    elif weight < 15:
+        flexipawshagive = "2.5"
+    elif weight < 31:
+        flexipawshagive = "3.75"
+    else:
+        flexipawshagive = "5"
+    flexipawshaprint = (f"Flexi-paws HA: \nGive {flexipawshagive} ml once a day as a supplement or maintenance. May be mixed with food.")
+    st.write (flexipawshaprint)
+    return flexipawshaprint
+
 def inside_out():
     if species in ["fel" , "feline" , "cat", "c"]:
         if weight < 3:
@@ -2253,177 +2271,61 @@ def cefurox():
 #GUI taking patient info
 #coamoxiclav stuff
 def pimo():
-    pimodsg = st.number_input("Please choose Pimobendan dosage: 0.25 - 0.3mg/kg: " , key="pimodsg")
-    pimogive_1 = (weight * pimodsg)
-    if pimogive_1 < (2.3):
-        pimocons = 1.25
-        pimogive_2 = int(round_half_up((pimogive_1 / pimocons)*4)) / 4
-        if pimogive_2 == 0.25:
-            pimotab = ("1/4")
-                       
-        elif pimogive_2 == 0.5:
-            pimotab = ("1/2")
-
-        elif pimogive_2 == 0.75:
-            pimotab = ("3/4")
-        
-        elif pimogive_2 == 1:
-            pimotab = ("1")
-
-        elif pimogive_2 == 1.25:
-            pimotab = ("1 and 1/4")
-
-        elif pimogive_2 == 1.5:
-            pimotab = ("1 and 1/2")
-
-        elif pimogive_2 == 1.75:
-            pimotab = ("1 and 3/4")
-
-        elif pimogive_2 == 2:
-            pimotab = ("2")
-
-        elif pimogive_2 == 2.25:
-            pimotab = ("1 and 1/4")
-        
-        elif pimogive_2 == 2.5:
-            pimotab = ("1 and 1/2")
-        
-        elif pimogive_2 == 2.75:
-            pimotab = ("1 and 3/4")
-        
-        elif pimogive_2 == 3:
-            pimotab = ("3")
+    pimodsg = st.number_input("Please choose Pimobendan dosage: 0.25 - 0.3mg/kg (true range: 0.05 - 0.48mg/kg): " , key="pimodsg")
+     pimo_cons = st.selectbox(
+                "Please choose concentration available: ",
+                ("1.25 mg" , "2.5 mg" , "5 mg", "10 mg"),
+                index=None,
+                placeholder="Select concentration...",
+            )
+        if pimo_cons == "1.25 mg":
+            cons = 1.25
+        elif pimo_cons == "2.5 mg":
+            cons = 2.5
+        elif pimo_cons == "5 mg":
+            cons = 5
+        elif pimo_cons == "10 mg":
+            cons = 10
+        pimogive_2 = int(round_half_up((weight * pimodsg / cons)*4)) / 4
+            if pimogive_2 == 0.25:
+                pimotab = ("1/4")
+                           
+            elif pimogive_2 == 0.5:
+                pimotab = ("1/2")
+    
+            elif pimogive_2 == 0.75:
+                pimotab = ("3/4")
             
-        
-        pimoprint = (f"Pimobendan 1.25mg: \nGive {pimotab} tab twice a day as maintenance. \n ")
-        st.write (pimoprint)
-
-    elif pimogive_1 >= (2.3) and pimogive_1 < (5):
-        pimocons = 2.5
-        pimogive_2 = int(round_half_up((pimogive_1 / pimocons)*4)) / 4
-        if pimogive_2 == 0.25:
-            pimotab = ("1/4")
-                       
-        elif pimogive_2 == 0.5:
-            pimotab = ("1/2")
-
-        elif pimogive_2 == 0.75:
-            pimotab = ("3/4")
-        
-        elif pimogive_2 == 1:
-            pimotab = ("1")
-
-        elif pimogive_2 == 1.25:
-            pimotab = ("1 and 1/4")
-
-        elif pimogive_2 == 1.5:
-            pimotab = ("1 and 1/2")
-
-        elif pimogive_2 == 1.75:
-            pimotab = ("1 and 3/4")
-
-        elif pimogive_2 == 2:
-            pimotab = ("2")
-
-        elif pimogive_2 == 2.25:
-            pimotab = ("1 and 1/4")
-        
-        elif pimogive_2 == 2.5:
-            pimotab = ("1 and 1/2")
-        
-        elif pimogive_2 == 2.75:
-            pimotab = ("1 and 3/4")
-        
-        elif pimogive_2 == 3:
-            pimotab = ("3")
-
-        st.write (f"Pimobendan 2.5mg: \nGive {pimotab} tab twice a day as maintenance. \n ")
-        pimoprint = (f"Pimobendan 2.5mg: \nGive {pimotab} tab twice a day as maintenance.\n ")
-
-    elif pimogive_1 >= (5) and pimogive_1 < (10):
-        pimocons = 5
-        pimogive_2 = int(round_half_up((pimogive_1 / pimocons)*4)) / 4
-        if pimogive_2 == 0.25:
-            pimotab = ("1/4")
-                       
-        elif pimogive_2 == 0.5:
-            pimotab = ("1/2")
-
-        elif pimogive_2 == 0.75:
-            pimotab = ("3/4")
-        
-        elif pimogive_2 == 1:
-            pimotab = ("1")
-
-        elif pimogive_2 == 1.25:
-            pimotab = ("1 and 1/4")
-
-        elif pimogive_2 == 1.5:
-            pimotab = ("1 and 1/2")
-
-        elif pimogive_2 == 1.75:
-            pimotab = ("1 and 3/4")
-
-        elif pimogive_2 == 2:
-            pimotab = ("2")
-
-        elif pimogive_2 == 2.25:
-            pimotab = ("1 and 1/4")
-        
-        elif pimogive_2 == 2.5:
-            pimotab = ("1 and 1/2")
-        
-        elif pimogive_2 == 2.75:
-            pimotab = ("1 and 3/4")
-        
-        elif pimogive_2 == 3:
-            pimotab = ("3")
-        pimoprint = (f"Pimobendan 5mg: \nGive {pimotab} tab twice a day as maintenance. \n ")
-        st.write (pimoprint)
-
-
-    elif pimogive_1 >= (10):
-        pimocons = 10
-        pimogive_2 = int(round_half_up((pimogive_1 / pimocons)*4)) / 4
-        if pimogive_2 == 0.25:
-            pimotab = ("1/4")
-                       
-        elif pimogive_2 == 0.5:
-            pimotab = ("1/2")
-
-        elif pimogive_2 == 0.75:
-            pimotab = ("3/4")
-        
-        elif pimogive_2 == 1:
-            pimotab = ("1")
-
-        elif pimogive_2 == 1.25:
-            pimotab = ("1 and 1/4")
-
-        elif pimogive_2 == 1.5:
-            pimotab = ("1 and 1/2")
-
-        elif pimogive_2 == 1.75:
-            pimotab = ("1 and 3/4")
-
-        elif pimogive_2 == 2:
-            pimotab = ("2")
-
-        elif pimogive_2 == 2.25:
-            pimotab = ("1 and 1/4")
-        
-        elif pimogive_2 == 2.5:
-            pimotab = ("1 and 1/2")
-        
-        elif pimogive_2 == 2.75:
-            pimotab = ("1 and 3/4")
-        
-        elif pimogive_2 == 3:
-            pimotab = ("3")
-        pimoprint = (f"Pimobendan 10mg: \nGive {pimotab} tab twice as maintenance.\n ")
-        st.write (pimoprint)
-
-    return pimoprint
+            elif pimogive_2 == 1:
+                pimotab = ("1")
+    
+            elif pimogive_2 == 1.25:
+                pimotab = ("1 and 1/4")
+    
+            elif pimogive_2 == 1.5:
+                pimotab = ("1 and 1/2")
+    
+            elif pimogive_2 == 1.75:
+                pimotab = ("1 and 3/4")
+    
+            elif pimogive_2 == 2:
+                pimotab = ("2")
+    
+            elif pimogive_2 == 2.25:
+                pimotab = ("2 and 1/4")
+            
+            elif pimogive_2 == 2.5:
+                pimotab = ("2 and 1/2")
+            
+            elif pimogive_2 == 2.75:
+                pimotab = ("2 and 3/4")
+            
+            elif pimogive_2 == 3:
+                pimotab = ("3")
+                
+            pimoprint = (f"Pimobendan {cons}mg: \nGive {pimotab} tab twice a day as maintenance. \n ")
+            st.write (pimoprint)
+            return pimoprint
 
 
 def retromad():
