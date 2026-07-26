@@ -774,6 +774,9 @@ def sildenafil():
     
     elif sildegive_2 == 3:
         sildetab = ("3")
+
+    else:
+        st.write ("Please check patient's weight and dosage, the drug may require compounding.") 
     silde_int = st.selectbox(
                 "Please choose interval: ",
                 ("BID" , "TID"),
