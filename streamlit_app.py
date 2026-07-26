@@ -782,7 +782,7 @@ def sildenafil():
             )
     if silde_int == "BID":
         silde_int2 = ("twice a day (every 12 hours)")
-    elif sidle_int == "TID":
+    elif silde_int == "TID":
         silde_int2 = ("thrice a day (every 8 hours)") 
         
     sildeprint = (f"Sildenafil {cons}mg: \nGive {sildetab} tab {silde_int2} as maintenance. \n ")
