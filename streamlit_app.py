@@ -643,6 +643,12 @@ def main ():
         result = flexipawsha()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug in ["silde" , "sildenafil" , "sild"]:
+        result = sildenafil()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
+    
     
     else:
         st.write ("Refer to Drug Codex")
@@ -718,7 +724,71 @@ def inside_out():
     return insideoutprint
             
             
-            
+def sildenafil():
+    sildedsg = st.number_input("Please choose Sildenafil dosage: 1 - 3mg/kg " , key="sildedsg")
+    silde_cons = st.selectbox(
+                "Please choose concentration available: ",
+                ("25 mg" , "50 mg", "100 mg"),
+                index=None,
+                placeholder="Select concentration...",
+            )
+    if silde_cons == "25 mg":
+        cons = 25
+    elif silde_cons == "50 mg":
+        cons = 50
+    elif silde_cons == "100 mg":
+        cons = 100
+    sildegive_2 = int(round_half_up((weight * sildedsg / cons)*4)) / 4
+    if sildegive_2 == 0.25:
+        sildetab = ("1/4")
+                   
+    elif sildegive_2 == 0.5:
+        sildetab = ("1/2")
+
+    elif sildegive_2 == 0.75:
+        sildetab = ("3/4")
+    
+    elif sildegive_2 == 1:
+        sildetab = ("1")
+
+    elif sildegive_2 == 1.25:
+        sildetab = ("1 and 1/4")
+
+    elif sildegive_2 == 1.5:
+        sildetab = ("1 and 1/2")
+
+    elif sildegive_2 == 1.75:
+        sildetab = ("1 and 3/4")
+
+    elif sildegive_2 == 2:
+        sildetab = ("2")
+
+    elif sildegive_2 == 2.25:
+        sildetab = ("2 and 1/4")
+    
+    elif sildegive_2 == 2.5:
+        sildetab = ("2 and 1/2")
+    
+    elif sildegive_2 == 2.75:
+        sildetab = ("2 and 3/4")
+    
+    elif sildegive_2 == 3:
+        sildetab = ("3")
+    silde_int = st.selectbox(
+                "Please choose interval: ",
+                ("BID" , "TID"),
+                index=None,
+                placeholder="Select interval...",
+            )
+    if silde_int == BID:
+        silde_int2 = ("twice a day (every 12 hours)")
+    elif sidle_int == TID:
+        silde_int2 = ("thrice a day (every 8 hours)") 
+        
+    sildeprint = (f"Sildenafil {cons}mg: \nGive {sildetab} tab {silde_int2} as maintenance. \n ")
+    st.write (sildeprint)
+    return sildeprint
+
 
 def atenolol():
     if species in ["fel" , "feline" , "cat", "c"]:
