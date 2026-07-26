@@ -777,7 +777,7 @@ def sildenafil():
 
     else:
         silde_comp_dsg = (weight * sildedsg / cons)
-        st.write (f"Please check patient's weight and dosage, the drug may require compounding: {silde_comp_dsg.1f}") 
+        st.write (f"Please check patient's weight and dosage, the drug may require compounding: {silde_comp_dsg:.1f}") 
     silde_int = st.selectbox(
                 "Please choose interval: ",
                 ("BID" , "TID"),
