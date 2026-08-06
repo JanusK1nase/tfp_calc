@@ -756,7 +756,7 @@ def tadalafil():
         tada_comp_dsg = (weight * tadadsg / cons)
         st.write (f"Please check patient's weight and dosage, the drug may require compounding: {tada_comp_dsg:.1f}mg") 
     
-    tadaprint = (f"Tadalafil {cons}mg: \nGive {tadatab} tab ocne a day as maintenance. \n ")
+    tadaprint = (f"Tadalafil {cons}mg: \nGive {tadatab} tab once a day as maintenance. \n ")
     st.write (tadaprint)
     return tadaprint
     
