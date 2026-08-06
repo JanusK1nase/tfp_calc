@@ -677,7 +677,8 @@ def main ():
     patient_notes = st.text_area("Additional Notes (optional):", placeholder="Enter any additional instructions or notes here...")
     
     if st.button("Generate Rx"):
-        generate_pdf(st.session_state.results, diet=patient_diet, notes=patient_notes)
+        generate_pdf(st.session_state.results, diet=patient_diet, notes=patient_notes, 
+                     patient_name=patientname, patient_species=species, patient_weight=weight)
         with open(f"{patientname} Rx.pdf", "rb") as file:
             st.download_button("Download Prescription", file, file_name=f"{patientname} Rx.pdf")
     if st.button("Generate Rx"):
@@ -2031,7 +2032,7 @@ def round_half_up(n, decimals=0):
     multiplier = 10**decimals
     return math.floor(n * multiplier + 0.5) / multiplier
 
-def generate_pdf(results):
+def generate_pdf(results, diet="", notes="", patient_name="", patient_species="", patient_weight=0):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=11)
