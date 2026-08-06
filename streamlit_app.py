@@ -648,6 +648,11 @@ def main ():
         result = sildenafil()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug in ["tadalafil" , "tada"]:
+        result = tadalafil()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
     
     else:
@@ -688,6 +693,64 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def tadalafil():
+    tadadsg = st.number_input("Please choose Tadalafil dosage: 1 - 2mg/kg (Usuals tarting: 2mg/kg) " , key="tadadsg")
+    tada_cons = st.selectbox(
+                "Please choose concentration available: ",
+                ("5 mg" , "20 mg"),
+                index=None,
+                placeholder="Select concentration...",
+            )
+    if tada_cons == "5 mg":
+        cons = 5
+    elif tada_cons == "20 mg":
+        cons = 20
+    tadagive_2 = int(round_half_up((weight * tadadsg / cons)*4)) / 4
+    if tadagive_2 == 0.25:
+        tadatab = ("1/4")
+                   
+    elif tadagive_2 == 0.5:
+        tadatab = ("1/2")
+
+    elif tadagive_2 == 0.75:
+        tadatab = ("3/4")
+    
+    elif tadagive_2 == 1:
+        tadatab = ("1")
+
+    elif tadagive_2 == 1.25:
+        tadatab = ("1 and 1/4")
+
+    elif tadagive_2 == 1.5:
+        tadatab = ("1 and 1/2")
+
+    elif tadagive_2 == 1.75:
+        tadatab = ("1 and 3/4")
+
+    elif tadagive_2 == 2:
+        tadatab = ("2")
+
+    elif tadagive_2 == 2.25:
+        tadatab = ("2 and 1/4")
+    
+    elif tadagive_2 == 2.5:
+        tadatab = ("2 and 1/2")
+    
+    elif tadagive_2 == 2.75:
+        tadatab = ("2 and 3/4")
+    
+    elif tadagive_2 == 3:
+        tadatab = ("3")
+
+    else:
+        tada_comp_dsg = (weight * tadadsg / cons)
+        st.write (f"Please check patient's weight and dosage, the drug may require compounding: {tada_comp_dsg:.1f}mg") 
+    
+    tadaprint = (f"Sildenafil {cons}mg: \nGive {tadatab} tab ocne a day as maintenance. \n ")
+    st.write (tadaprint)
+    return tadaprint
+    
+
 def flexipawsha():
     if weight < 5:
         flexipawshagive = "1.25"
