@@ -670,7 +670,16 @@ def main ():
     if remove_index is not None:
         st.session_state.results.pop(remove_index)
 
+    # Add these lines BEFORE the "Generate Rx" button in your main() function
+
+    # Collect diet and notes information
+    patient_diet = st.text_area("Patient Diet (optional):", placeholder="Enter diet recommendations here...")
+    patient_notes = st.text_area("Additional Notes (optional):", placeholder="Enter any additional instructions or notes here...")
     
+    if st.button("Generate Rx"):
+        generate_pdf(st.session_state.results, diet=patient_diet, notes=patient_notes)
+        with open(f"{patientname} Rx.pdf", "rb") as file:
+            st.download_button("Download Prescription", file, file_name=f"{patientname} Rx.pdf")
     if st.button("Generate Rx"):
         generate_pdf(st.session_state.results)
         with open(f"{patientname} Rx.pdf", "rb") as file:
@@ -2051,7 +2060,24 @@ def generate_pdf(results):
     for index, result in enumerate(results, start=1):
         pdf.multi_cell(200, 8, txt=f"({index}) {result}")
         pdf.ln(0.05)
+    
+    # Add diet section
+    if diet:
+        pdf.ln(5)
+        pdf.set_font("Arial", style='B', size=10)
+        pdf.cell(0, 10, txt="DIET:", ln=True)
+        pdf.set_font("Arial", size=10)
+        pdf.multi_cell(200, 8, txt=diet)
+        pdf.ln(0.05)
 
+    # Add additional notes section
+    if notes:
+        pdf.ln(5)
+        pdf.set_font("Arial", style='B', size=10)
+        pdf.cell(0, 10, txt="ADDITIONAL NOTES:", ln=True)
+        pdf.set_font("Arial", size=10)
+        pdf.multi_cell(200, 8, txt=notes)
+        pdf.ln(0.05)
     
     pdf.output(f"{patientname} Rx.pdf")
     
