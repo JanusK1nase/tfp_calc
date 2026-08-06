@@ -2062,23 +2062,23 @@ def generate_pdf(results, diet="", notes="", patient_name="", patient_species=""
         pdf.multi_cell(200, 8, txt=f"({index}) {result}")
         pdf.ln(0.05)
     
-    # Add diet section
+    # Add diet section with smaller font and spacing
     if diet:
-        pdf.ln(5)
-        pdf.set_font("Arial", style='B', size=10)
-        pdf.cell(0, 10, txt="DIET:", ln=True)
-        pdf.set_font("Arial", size=10)
-        pdf.multi_cell(200, 8, txt=diet)
-        pdf.ln(0.05)
+        pdf.ln(2)
+        pdf.set_font("Arial", style='B', size=9)
+        pdf.cell(0, 6, txt="DIET:", ln=True)
+        pdf.set_font("Arial", size=9)
+        pdf.multi_cell(200, 5, txt=diet)
+        pdf.ln(1)
 
-    # Add additional notes section
+    # Add additional notes section with smaller font and spacing
     if notes:
-        pdf.ln(5)
-        pdf.set_font("Arial", style='B', size=10)
-        pdf.cell(0, 10, txt="ADDITIONAL NOTES:", ln=True)
-        pdf.set_font("Arial", size=10)
-        pdf.multi_cell(200, 8, txt=notes)
-        pdf.ln(0.05)
+        pdf.ln(2)
+        pdf.set_font("Arial", style='B', size=9)
+        pdf.cell(0, 6, txt="ADDITIONAL NOTES:", ln=True)
+        pdf.set_font("Arial", size=9)
+        pdf.multi_cell(200, 5, txt=notes)
+        pdf.ln(1)
     
     pdf.output(f"{patientname} Rx.pdf")
     
