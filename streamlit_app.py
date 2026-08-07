@@ -653,6 +653,11 @@ def main ():
         result = tadalafil()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
+
+    elif drug in ["cilostazol" , "cilos" , "cilo"]:
+        result = cilostazol()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     
     
     else:
@@ -703,6 +708,64 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def cilostazol():
+    cilo_cons = st.selectbox(
+                "Please choose concentration available: ",
+                ("50 mg" , "100 mg" , "200 mg"),
+                index=None,
+                placeholder="Select concentration...",
+            )
+    if cilo_cons == "50 mg":
+        cons = 50
+    elif cilo_cons == "200 mg":
+        cons = 200
+    elif cilo_cons == "100 mg":
+        cons = 100
+    cilogive_2 = int(round_half_up((weight * 10 / cons)*4)) / 4
+    if cilogive_2 == 0.25:
+        cilotab = ("1/4")
+                   
+    elif cilogive_2 == 0.5:
+        cilotab = ("1/2")
+
+    elif cilogive_2 == 0.75:
+        cilotab = ("3/4")
+    
+    elif cilogive_2 == 1:
+        cilotab = ("1")
+
+    elif cilogive_2 == 1.25:
+        cilotab = ("1 and 1/4")
+
+    elif cilogive_2 == 1.5:
+        cilotab = ("1 and 1/2")
+
+    elif cilogive_2 == 1.75:
+        cilotab = ("1 and 3/4")
+
+    elif cilogive_2 == 2:
+        cilotab = ("2")
+
+    elif cilogive_2 == 2.25:
+        cilotab = ("2 and 1/4")
+    
+    elif cilogive_2 == 2.5:
+        cilotab = ("2 and 1/2")
+    
+    elif cilogive_2 == 2.75:
+        cilotab = ("2 and 3/4")
+    
+    elif cilogive_2 == 3:
+        cilotab = ("3")
+
+    else:
+        cilo_comp_dsg = (weight * cilodsg / cons)
+        st.write (f"Please check patient's weight and dosage, the drug may require compounding: {cilo_comp_dsg:.1f}mg") 
+    
+    ciloprint = (f"Cilostazol {cons}mg: \nGive {cilotab} tab twice a day as maintenance. \n ")
+    st.write (ciloprint)
+    return ciloprint
+
 def tadalafil():
     tadadsg = st.number_input("Please choose Tadalafil dosage: 1 - 2mg/kg (Usuals tarting: 2mg/kg) " , key="tadadsg")
     tada_cons = st.selectbox(
