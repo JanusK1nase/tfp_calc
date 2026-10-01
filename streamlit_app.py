@@ -2392,11 +2392,11 @@ def furo():
                 placeholder="Select duration...",
             )
     if furo_duration == "7 days":
-        furo_dur_rx == "for 7 days"
-    elif furo_duration == "14 days":
+        furo_dur_rx = "for 7 days"
+    elif furo_duration = "14 days":
         furo_dur_rx == "for 14 days"
     elif furo_duration == "maintenance":
-        furo_dur_rx == "as maintenance"
+        furo_dur_rx = "as maintenance"
     furoprint = (f"Furosemide {furocons}mg: \nGive {tab} tab/s twice to thrice a day {furo_dur_rx}.\n ")
     st.write (furoprint)
     return furoprint
