@@ -2463,7 +2463,7 @@ def furo():
 def galibor():
     ursodsg = st.number_input("Please choose Ursodiol dosage: 10 - 15mg/kg")
     ursocons = 25
-    ursogive = (weight * ursodsg / ursocons)
+    ursogive = (weight * 15 / ursocons)
     ursoprint = (f"Ursodeoxycholic Acid 125mg/5ml: \nGive {ursogive:.1f} ml once a day for 15 - 30 days, or as intructed:\n ")
     st.write (ursoprint)
     return ursoprint
