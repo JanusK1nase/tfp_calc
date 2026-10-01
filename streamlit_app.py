@@ -129,7 +129,7 @@ def main ():
             st.session_state.results.append(result)
         
 
-    elif drug in ["fortekor", "benazepryl" , "aceptor"]:
+    elif drug in ["fortekor", "benazepryl" , "aceptor" , "bena" , "bene"]:
         result = benazepryl()
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
@@ -659,7 +659,10 @@ def main ():
         if st.button("Save to Rx"):
             st.session_state.results.append(result)
     
-    
+    elif drug in ["enalapril"]:
+        result = enalapril()
+        if st.button("Save to Rx"):
+            st.session_state.results.append(result)
     else:
         st.write ("Refer to Drug Codex")
 
@@ -2456,7 +2459,19 @@ def urso():
 
 def benazepryl():
     benazepryldsg = st.number_input("Please choose Benazepryl (Fortekor/Aceptor) dosage: 0.25 - 0.5mg/kg: ")
-    benazeprylcons = 5
+    bena_cons = st.selectbox(
+                "Please choose concentration available: ",
+                ("2.5 mg" , "5 mg" , "10 mg",),
+                index=None,
+                placeholder="Select concentration...",
+            )
+
+    if pimo_cons == "2.5 mg":
+        benazeprylcons = 2.5
+    elif pimo_cons == "5 mg":
+        benazeprylcons = 5
+    elif pimo_cons == "10 mg":
+        benazeprylcons = 10
     benazeprylgive = int(round_half_up((weight * benazepryldsg / benazeprylcons)*4)) / 4
     if benazeprylgive == 0.25:
             tab = ("1/4")
@@ -2494,7 +2509,7 @@ def benazepryl():
     elif benazeprylgive == 3:
         tab = ("3")
 
-    benaprint = (f"Benazepryl HCl (Fortekor/Aceptor) 5mg: \nGive {tab} tab/s once to twice a day as maintenance.\n ")
+    benaprint = (f"Benazepryl HCl (Fortekor/Aceptor) {benazeprylcons} mg: \nGive {tab} tab/s once to twice a day as maintenance.\n ")
     st.write (benaprint)
     return benaprint
 
