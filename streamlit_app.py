@@ -2466,11 +2466,11 @@ def benazepryl():
                 placeholder="Select concentration...",
             )
 
-    if pimo_cons == "2.5 mg":
+    if bena_cons == "2.5 mg":
         benazeprylcons = 2.5
-    elif pimo_cons == "5 mg":
+    elif bena_cons == "5 mg":
         benazeprylcons = 5
-    elif pimo_cons == "10 mg":
+    elif bena_cons == "10 mg":
         benazeprylcons = 10
     benazeprylgive = int(round_half_up((weight * benazepryldsg / benazeprylcons)*4)) / 4
     if benazeprylgive == 0.25:
