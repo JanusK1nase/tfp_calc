@@ -711,6 +711,62 @@ def main ():
 
 
 #int(round_half_up((weight * dsg / cons)*4)) / 4
+def enalapril():
+    enalaprildsg = st.number_input("Please choose Enalapril dosage: 0.25 - 0.5mg/kg: ")
+    enala_cons = st.selectbox(
+                "Please choose concentration available: ",
+                ("2.5 mg" , "5 mg" , "10 mg",),
+                index=None,
+                placeholder="Select concentration...",
+            )
+
+    if enala_cons == "2.5 mg":
+        enalaprilcons = 2.5
+    elif enala_cons == "5 mg":
+        enalaprilcons = 5
+    elif enala_cons == "10 mg":
+        enalaprilcons = 10
+    enalaprilgive = int(round_half_up((weight * enalaprildsg / enalaprilcons)*4)) / 4
+    if enalaprilgive == 0.25:
+        tab = ("1/4")
+                       
+    elif enalaprilgive == 0.5:
+        tab = ("1/2")
+
+    elif enalaprilgive == 0.75:
+        tab = ("3/4")
+
+    elif enalaprilgive == 1:
+        tab = ("1")
+
+    elif enalaprilgive == 1.25:
+        tab = ("1 and 1/4")
+
+    elif enalaprilgive == 1.5:
+        tab = ("1 and 1/2")
+
+    elif enalaprilgive == 1.75:
+        tab = ("1 and 3/4")
+
+    elif enalaprilgive == 2:
+        tab = ("2")
+
+    elif enalaprilgive == 2.25:
+        tab = ("2 and 1/4")
+
+    elif enalaprilgive == 2.5:
+        tab = ("1 and 1/2")
+    
+    elif enalaprilgive == 2.75:
+        tab = ("1 and 3/4")
+    
+    elif enalaprilgive == 3:
+        tab = ("3")
+
+    benaprint = (f"Enalapril HCl {enalaprilcons} mg: \nGive {tab} tab/s twice a day as maintenance.\n ")
+    st.write (enalaprint)
+    return enalaprint
+
 def cilostazol():
     cilo_cons = st.selectbox(
                 "Please choose concentration available: ",
@@ -2408,15 +2464,14 @@ def galibor():
     ursodsg = st.number_input("Please choose Ursodiol dosage: 10 - 15mg/kg")
     ursocons = 25
     ursogive = (weight * ursodsg / ursocons)
-    ursoprint = (f"Ursodeoxycholic Acid 125mg/5ml: \nGive {ursogive:.1f} ml once a day for 15 - 30 days.\n ")
+    ursoprint = (f"Ursodeoxycholic Acid 125mg/5ml: \nGive {ursogive:.1f} ml once a day for 15 - 30 days, or as intructed:\n ")
     st.write (ursoprint)
     return ursoprint
 
 
 def urso():
-    ursodsg = st.number_input("Please choose Ursodiol dosage: 13 - 15mg/kg")
     ursocons = 300
-    give = int(round_half_up((weight * ursodsg / ursocons)*4)) / 4
+    give = int(round_half_up((weight * 15 / ursocons)*4)) / 4
     if give == 0.25:
         tab = ("1/4")
 
@@ -2452,7 +2507,7 @@ def urso():
 
     elif give == 3:
         tab = ("3")
-    ursoprint = (f"Ursodiol 300mg: \nGive {tab} tab/s once to twice a day for 14 days.\n ")
+    ursoprint = (f"Ursodiol/Ursodeoxycholic acid 300mg: \nGive {tab} tab/s once a day for 14 - 30 days, or as instructed: \n ")
     st.write (ursoprint)
     return ursoprint
 
