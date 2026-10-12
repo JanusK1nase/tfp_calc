@@ -763,7 +763,7 @@ def enalapril():
     elif enalaprilgive == 3:
         tab = ("3")
 
-    benaprint = (f"Enalapril HCl {enalaprilcons} mg: \nGive {tab} tab/s twice a day as maintenance.\n ")
+    enalaprint = (f"Enalapril HCl {enalaprilcons} mg: \nGive {tab} tab/s twice a day as maintenance.\n ")
     st.write (enalaprint)
     return enalaprint
 
